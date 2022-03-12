@@ -1,5 +1,6 @@
 using System;
 using System.ComponentModel;
+using BaseContract = wdos.contract.IContract;
 
 namespace wdos.wpf.contract
 {
@@ -7,8 +8,8 @@ namespace wdos.wpf.contract
     /// WPF 应用接口
     /// </summary>
     [Description("WPF-Plugin-Interface")]
-    public interface IContract
+    public interface IContract : BaseContract
     {
-        public string GetName();
+
     }
 }
