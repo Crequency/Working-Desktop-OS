@@ -7,6 +7,12 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos", "wdos\wdos.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.wpf.contract", "wdos.wpf.contract\wdos.wpf.contract.csproj", "{765465BA-ACA7-427D-BD7D-3D73E8F84589}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.contract", "wdos.contract\wdos.contract.csproj", "{C02FE438-13DB-4346-B5A0-D030DF86D71E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.global", "wdos.global\wdos.global.csproj", "{9F605CFC-D39E-4931-86CC-48D38AD20951}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.exceptions", "wdos.exceptions\wdos.exceptions.csproj", "{44278DBA-BAD6-4FBB-8D2C-0C8E80C0D59B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +27,18 @@ Global
 		{765465BA-ACA7-427D-BD7D-3D73E8F84589}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{765465BA-ACA7-427D-BD7D-3D73E8F84589}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{765465BA-ACA7-427D-BD7D-3D73E8F84589}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C02FE438-13DB-4346-B5A0-D030DF86D71E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C02FE438-13DB-4346-B5A0-D030DF86D71E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C02FE438-13DB-4346-B5A0-D030DF86D71E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C02FE438-13DB-4346-B5A0-D030DF86D71E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F605CFC-D39E-4931-86CC-48D38AD20951}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F605CFC-D39E-4931-86CC-48D38AD20951}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F605CFC-D39E-4931-86CC-48D38AD20951}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F605CFC-D39E-4931-86CC-48D38AD20951}.Release|Any CPU.Build.0 = Release|Any CPU
+		{44278DBA-BAD6-4FBB-8D2C-0C8E80C0D59B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{44278DBA-BAD6-4FBB-8D2C-0C8E80C0D59B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{44278DBA-BAD6-4FBB-8D2C-0C8E80C0D59B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{44278DBA-BAD6-4FBB-8D2C-0C8E80C0D59B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
