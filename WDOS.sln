@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos", "wdos\wdos.csproj", "{4961AEB1-596D-4486-AC11-B91C179F00E5}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos", "wdos\wdos.csproj", "{4961AEB1-596D-4486-AC11-B91C179F00E5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.wpf.contract", "wdos.wpf.contract\wdos.wpf.contract.csproj", "{765465BA-ACA7-427D-BD7D-3D73E8F84589}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{4961AEB1-596D-4486-AC11-B91C179F00E5}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4961AEB1-596D-4486-AC11-B91C179F00E5}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4961AEB1-596D-4486-AC11-B91C179F00E5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{765465BA-ACA7-427D-BD7D-3D73E8F84589}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{765465BA-ACA7-427D-BD7D-3D73E8F84589}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{765465BA-ACA7-427D-BD7D-3D73E8F84589}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{765465BA-ACA7-427D-BD7D-3D73E8F84589}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
