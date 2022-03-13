@@ -4,7 +4,7 @@ using System;
 namespace wdos.contract.unit.test
 {
     [TestClass]
-    public class UnitTest1
+    public class UnitTest_GUID
     {
         private string Test_App_GUID_Struct(App_GUID_Struct ags)
         {
@@ -15,7 +15,7 @@ namespace wdos.contract.unit.test
         }
 
         [TestMethod]
-        public void TestMethod1()
+        public void TestMethod_GUID()
         {
             App_GUID_Struct ags1 = GUID_Helper.Get_GUID_FromString("" +
                 "TD244-P4NB7-YQ6XK-Y8MMM-YWV2J",
@@ -32,6 +32,7 @@ namespace wdos.contract.unit.test
             catch (exceptions.GUID_Exception ex)
             {
                 Console.WriteLine(ex.Message);
+                System.Windows.MessageBox.Show(ex.ErrorDescribe);
                 Console.WriteLine(ex.ErrorDescribe);
             }
             try

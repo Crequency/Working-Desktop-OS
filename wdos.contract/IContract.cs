@@ -53,6 +53,18 @@ namespace wdos.contract
         }
 
         /// <summary>
+        /// 每段赋值
+        /// </summary>
+        /// <param name="agsp">GUID结构体Part引用</param>
+        /// <param name="yet">part</param>
+        private static void SetPart_GUID_Part(ref App_GUID_Struct_Part agsp, string yet)
+        {
+            agsp.part = yet; agsp.A = yet[0];
+            agsp.B = yet[1]; agsp.C = yet[2];
+            agsp.D = yet[3]; agsp.E = yet[4];
+        }
+
+        /// <summary>
         /// 将字符串转换为GUID结构体
         /// </summary>
         /// <param name="guid">字符串形式GUID</param>
@@ -69,39 +81,14 @@ namespace wdos.contract
                 int passed = 0;
                 foreach (string part in parts)
                 {
-                    App_GUID_Struct_Part agsp;
-                    #region 调整引用, 指向下一部分
+                    #region 分段部分赋值
                     switch (passed)
                     {
-                        case 0: agsp = app_GUID_Struct.A; break;
-                        case 1: agsp = app_GUID_Struct.B; break;
-                        case 2: agsp = app_GUID_Struct.C; break;
-                        case 3: agsp = app_GUID_Struct.D; break;
-                        case 4: agsp = app_GUID_Struct.E; break;
-                    }
-                    #endregion
-                    #region 判断每一部分是否合法, 不合法抛出异常
-                    if (part.Length != 5)
-                    {
-                        int spaceNum = passed * 5 + passed;
-                        throw new GUID_Exception("Invalid GUID format.",
-                            $"WDOS:FE1021 >> {guid}\n" +
-                            $"{GenerateChar(spaceNum + 15, ' ')}" +
-                            $"{part}");
-                    }
-                    #endregion
-                    #region 将每一部分赋值与结构体的部分
-                    agsp.part = part;
-                    for(int i = 0; i < part.Length; ++i)
-                    {
-                        switch (i)
-                        {
-                            case 0: agsp.A = part[i]; break;
-                            case 1: agsp.B = part[i]; break;
-                            case 2: agsp.C = part[i]; break;
-                            case 3: agsp.D = part[i]; break;
-                            case 4: agsp.E = part[i]; break;
-                        }
+                        case 0: SetPart_GUID_Part(ref app_GUID_Struct.A, part); break;
+                        case 1: SetPart_GUID_Part(ref app_GUID_Struct.B, part); break;
+                        case 2: SetPart_GUID_Part(ref app_GUID_Struct.C, part); break;
+                        case 3: SetPart_GUID_Part(ref app_GUID_Struct.D, part); break;
+                        case 4: SetPart_GUID_Part(ref app_GUID_Struct.E, part); break;
                     }
                     #endregion
                     ++passed;
