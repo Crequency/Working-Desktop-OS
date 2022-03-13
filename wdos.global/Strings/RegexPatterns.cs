@@ -8,6 +8,6 @@ namespace wdos.global.Strings
 {
     public static class RegexPatterns
     {
-        public const string GUID_Pattern = "([A-Z]*[0-9]*)*(-)*";
+        public const string GUID_Pattern = "([{A-Z}{0-9}]){5}-([{A-Z}{0-9}]){5}-([{A-Z}{0-9}]){5}-([{A-Z}{0-9}]){5}-([{A-Z}{0-9}]){5}";
     }
 }

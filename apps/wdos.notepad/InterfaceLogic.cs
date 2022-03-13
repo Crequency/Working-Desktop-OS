@@ -16,7 +16,8 @@ namespace wdos.notepad
     {
         public BaseContract.App_GUID_Struct AppGUID()
         {
-            return BaseContract.GUID_Helper.Get_GUID_FromString("");
+            return BaseContract.GUID_Helper.Get_GUID_FromString("",
+                BaseContract.GUID_Status.Test);
         }
 
         public string AppName() => "NotePad";

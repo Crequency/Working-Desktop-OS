@@ -27,6 +27,9 @@ namespace wdos.contract
         App_GUID_Struct AppGUID();
     }
 
+    /// <summary>
+    /// GUID 帮助类
+    /// </summary>
     public static class GUID_Helper
     {
         /// <summary>
@@ -37,10 +40,16 @@ namespace wdos.contract
         /// <returns>拼合成字符串</returns>
         private static string GenerateChar(int num, char c)
         {
-            string space = string.Empty;
-            for (int i = 0; i < num; i++)
-                space += c;
+            string space = "";
+            for (int i = 0; i < num; i++) space += c;
             return space;
+        }
+
+        public static GUID_Status TypeOf_GUID_Staus(App_GUID_Struct guid)
+        {
+            GUID_Status status = new();
+
+            return status;
         }
 
         /// <summary>
@@ -49,21 +58,32 @@ namespace wdos.contract
         /// <param name="guid">字符串形式GUID</param>
         /// <returns>GUID结构体</returns>
         /// <exception cref="GUID_Exception">非法GUID异常</exception>
-        public static App_GUID_Struct Get_GUID_FromString(string guid)
+        public static App_GUID_Struct Get_GUID_FromString(string guid, GUID_Status? status)
         {
             App_GUID_Struct app_GUID_Struct = new();
+            app_GUID_Struct.level = status ?? GUID_Status.Test;
             guid = guid.ToUpper(); // 转换为大写字母
             if (new Regex(RegexPatterns.GUID_Pattern).IsMatch(guid))
             {
                 string[] parts = guid.Split('-');
-                int passed = 0, setted = 0;
-                App_GUID_Struct_Part agsp = app_GUID_Struct.A;
+                int passed = 0;
                 foreach (string part in parts)
                 {
+                    App_GUID_Struct_Part agsp;
+                    #region 调整引用, 指向下一部分
+                    switch (passed)
+                    {
+                        case 0: agsp = app_GUID_Struct.A; break;
+                        case 1: agsp = app_GUID_Struct.B; break;
+                        case 2: agsp = app_GUID_Struct.C; break;
+                        case 3: agsp = app_GUID_Struct.D; break;
+                        case 4: agsp = app_GUID_Struct.E; break;
+                    }
+                    #endregion
                     #region 判断每一部分是否合法, 不合法抛出异常
                     if (part.Length != 5)
                     {
-                        int spaceNum = passed * 5 + passed == 0 ? 0 : passed;
+                        int spaceNum = passed * 5 + passed;
                         throw new GUID_Exception("Invalid GUID format.",
                             $"WDOS:FE1021 >> {guid}\n" +
                             $"{GenerateChar(spaceNum + 15, ' ')}" +
@@ -71,29 +91,20 @@ namespace wdos.contract
                     }
                     #endregion
                     #region 将每一部分赋值与结构体的部分
-                    foreach (char item in part)
+                    agsp.part = part;
+                    for(int i = 0; i < part.Length; ++i)
                     {
-                        switch (setted)
+                        switch (i)
                         {
-                            case 0: agsp.A = item; break;
-                            case 1: agsp.B = item; break;
-                            case 2: agsp.C = item; break;
-                            case 3: agsp.D = item; break;
-                            case 4: agsp.E = item; break;
+                            case 0: agsp.A = part[i]; break;
+                            case 1: agsp.B = part[i]; break;
+                            case 2: agsp.C = part[i]; break;
+                            case 3: agsp.D = part[i]; break;
+                            case 4: agsp.E = part[i]; break;
                         }
-                        ++setted;
                     }
                     #endregion
-                    #region 调整引用, 指向下一部分
-                    switch (passed)
-                    {
-                        case 0: agsp = app_GUID_Struct.B; break;
-                        case 1: agsp = app_GUID_Struct.C; break;
-                        case 2: agsp = app_GUID_Struct.D; break;
-                        case 3: agsp = app_GUID_Struct.E; break;
-                    } 
-                    #endregion
-                    ++passed; setted = 0;
+                    ++passed;
                 }
                 return app_GUID_Struct;
             }
@@ -110,6 +121,7 @@ namespace wdos.contract
     public struct App_GUID_Struct
     {
         public App_GUID_Struct_Part A, B, C, D, E;
+        public GUID_Status level;
     }
 
     /// <summary>
@@ -118,6 +130,7 @@ namespace wdos.contract
     public struct App_GUID_Struct_Part
     {
         public char A, B, C, D, E;
+        public string part;
     }
 
     /// <summary>
@@ -129,6 +142,14 @@ namespace wdos.contract
     {
         public PublisherType publisherType;
         public string publisherName;
+    }
+
+    /// <summary>
+    /// GUID 类型
+    /// </summary>
+    public enum GUID_Status
+    {
+        Debug = 0, Test = 0, Alpha = 1, Beta = 2, Release = 3, Publish = 3
     }
 
     /// <summary>
