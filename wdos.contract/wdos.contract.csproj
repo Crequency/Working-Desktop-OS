@@ -1,14 +1,10 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
   </PropertyGroup>
-
-  <ItemGroup>
-    <None Remove="33upsdwd.qqc~" />
-  </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\wdos.exceptions\wdos.exceptions.csproj" />

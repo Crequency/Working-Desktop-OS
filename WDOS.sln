@@ -13,6 +13,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.exceptions", "wdos.exc
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos", "wdos\wdos.csproj", "{2301384A-60F7-4C9E-8655-CD729FCB30B3}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{9E4E20C8-96C7-4575-A6F5-66B20C10BF80}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.notepad", "apps\wdos.notepad\wdos.notepad.csproj", "{F137B98C-A6C8-4DE4-A422-C2A89F7A07B7}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,9 +43,16 @@ Global
 		{2301384A-60F7-4C9E-8655-CD729FCB30B3}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2301384A-60F7-4C9E-8655-CD729FCB30B3}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2301384A-60F7-4C9E-8655-CD729FCB30B3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F137B98C-A6C8-4DE4-A422-C2A89F7A07B7}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F137B98C-A6C8-4DE4-A422-C2A89F7A07B7}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F137B98C-A6C8-4DE4-A422-C2A89F7A07B7}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F137B98C-A6C8-4DE4-A422-C2A89F7A07B7}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{F137B98C-A6C8-4DE4-A422-C2A89F7A07B7} = {9E4E20C8-96C7-4575-A6F5-66B20C10BF80}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA32DDEB-3928-4E24-AE5E-85D921E7B4BB}
