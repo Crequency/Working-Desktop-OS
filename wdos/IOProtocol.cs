@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Linq;
+﻿using System.IO;
 using System.Text;
-using System.Threading.Tasks;
 
 #pragma warning disable IDE0044 // 添加只读修饰符
 
@@ -35,9 +31,7 @@ namespace wdos
             byte[] outBuffer = streamEncoding.GetBytes(outString);
             int len = outBuffer.Length;
             if (len > ushort.MaxValue)
-            {
                 len = ushort.MaxValue;
-            }
             ioStream.WriteByte((byte)(len / 256));
             ioStream.WriteByte((byte)(len & 255));
             ioStream.Write(outBuffer, 0, len);
@@ -54,8 +48,7 @@ namespace wdos
 
         public ReadFileToStream(StreamString str, string filename)
         {
-            fn = filename;
-            ss = str;
+            fn = filename; ss = str;
         }
 
         public void Start()
