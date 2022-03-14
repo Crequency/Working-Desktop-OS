@@ -3,25 +3,27 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.wpf.contract", "wdos.wpf.contract\wdos.wpf.contract.csproj", "{765465BA-ACA7-427D-BD7D-3D73E8F84589}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.wpf.contract", "wdos.wpf.contract\wdos.wpf.contract.csproj", "{765465BA-ACA7-427D-BD7D-3D73E8F84589}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.contract", "wdos.contract\wdos.contract.csproj", "{C02FE438-13DB-4346-B5A0-D030DF86D71E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.contract", "wdos.contract\wdos.contract.csproj", "{C02FE438-13DB-4346-B5A0-D030DF86D71E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.global", "wdos.global\wdos.global.csproj", "{9F605CFC-D39E-4931-86CC-48D38AD20951}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.global", "wdos.global\wdos.global.csproj", "{9F605CFC-D39E-4931-86CC-48D38AD20951}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.exceptions", "wdos.exceptions\wdos.exceptions.csproj", "{44278DBA-BAD6-4FBB-8D2C-0C8E80C0D59B}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.exceptions", "wdos.exceptions\wdos.exceptions.csproj", "{44278DBA-BAD6-4FBB-8D2C-0C8E80C0D59B}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos", "wdos\wdos.csproj", "{2301384A-60F7-4C9E-8655-CD729FCB30B3}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "apps", "apps", "{9E4E20C8-96C7-4575-A6F5-66B20C10BF80}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.notepad", "apps\wdos.notepad\wdos.notepad.csproj", "{F137B98C-A6C8-4DE4-A422-C2A89F7A07B7}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.notepad", "apps\wdos.notepad\wdos.notepad.csproj", "{F137B98C-A6C8-4DE4-A422-C2A89F7A07B7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "test", "test", "{1E4D4B6C-2063-4A70-8B64-DA9BC24EB91E}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.contract.unit.test", "test\wdos.contract.unit.test\wdos.contract.unit.test.csproj", "{DCA99F44-3112-4542-97E7-858B89A9C77A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.basic.lib", "wdos.basic.lib\wdos.basic.lib.csproj", "{85066F7B-A771-40B1-B885-5798F3F80AE6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.basic.lib", "wdos.basic.lib\wdos.basic.lib.csproj", "{85066F7B-A771-40B1-B885-5798F3F80AE6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.unit.test", "test\wdos.unit.test\wdos.unit.test.csproj", "{E1054E29-5880-4461-8F5F-AA565B5C2B6A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -61,6 +63,10 @@ Global
 		{85066F7B-A771-40B1-B885-5798F3F80AE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{85066F7B-A771-40B1-B885-5798F3F80AE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{85066F7B-A771-40B1-B885-5798F3F80AE6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E1054E29-5880-4461-8F5F-AA565B5C2B6A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E1054E29-5880-4461-8F5F-AA565B5C2B6A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E1054E29-5880-4461-8F5F-AA565B5C2B6A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E1054E29-5880-4461-8F5F-AA565B5C2B6A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -68,6 +74,7 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{F137B98C-A6C8-4DE4-A422-C2A89F7A07B7} = {9E4E20C8-96C7-4575-A6F5-66B20C10BF80}
 		{DCA99F44-3112-4542-97E7-858B89A9C77A} = {1E4D4B6C-2063-4A70-8B64-DA9BC24EB91E}
+		{E1054E29-5880-4461-8F5F-AA565B5C2B6A} = {1E4D4B6C-2063-4A70-8B64-DA9BC24EB91E}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA32DDEB-3928-4E24-AE5E-85D921E7B4BB}

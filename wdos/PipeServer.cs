@@ -3,24 +3,32 @@ using System.Collections.Generic;
 using System.IO;
 using System.IO.Pipes;
 using System.Linq;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using wdos.global;
 
+[assembly: InternalsVisibleTo("wdos.unit.test")]
 namespace wdos
 {
     internal class PipeServer
     {
         internal Dictionary<string, Thread> ServerThreads = new();
-        internal NamedPipeServerStream RegisterServer =
-            new("RegisterServer", PipeDirection.InOut,
-                Global.PipeServer_MaxThreads);
+        internal NamedPipeServerStream? RegisterServer;
         internal int ThreadID = Environment.CurrentManagedThreadId;
 
         internal PipeServer()
         {
-            new Thread(StartListen).Start();
+            try
+            {
+                RegisterServer = new("WDOS_RegisterServer", PipeDirection.InOut,
+                    Global.PipeServer_MaxThreads);
+            }
+            catch (Exception ex)
+            {
+                
+            }
         }
 
         /// <summary>
@@ -28,7 +36,7 @@ namespace wdos
         /// </summary>
         internal void StopListen()
         {
-            RegisterServer.Close();
+            RegisterServer?.Close();
         }
 
         /// <summary>
@@ -36,15 +44,21 @@ namespace wdos
         /// </summary>
         internal void StartListen()
         {
-            RegisterServer.WaitForConnection();
-            try
+            new Thread(() =>
             {
+                RegisterServer?.WaitForConnection();
+                try
+                {
+                    StreamString ss = new(RegisterServer);
+                    ss.WriteString("WDOS_Welcome");
+                    string ans = ss.ReadString();
+                    ss.WriteString("Your new server: sdfgd");
+                }
+                catch (IOException e)
+                {
 
-            }
-            catch (IOException e)
-            {
-
-            }
+                }
+            }).Start();
         }
     }
 }

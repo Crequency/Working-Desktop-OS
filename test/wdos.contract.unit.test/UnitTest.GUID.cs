@@ -6,7 +6,7 @@ namespace wdos.contract.unit.test
     [TestClass]
     public class UnitTest_GUID
     {
-        private string Test_App_GUID_Struct(App_GUID_Struct ags)
+        private static string Test_App_GUID_Struct(App_GUID_Struct ags)
         {
             string rst = $"{ags.A.part}-" +
                 $"{ags.B.part}-{ags.C.part}-" +
@@ -32,7 +32,6 @@ namespace wdos.contract.unit.test
             catch (exceptions.GUID_Exception ex)
             {
                 Console.WriteLine(ex.Message);
-                System.Windows.MessageBox.Show(ex.ErrorDescribe);
                 Console.WriteLine(ex.ErrorDescribe);
             }
             try
