@@ -84,7 +84,7 @@ namespace wdos.contract
             }
             else
             {
-                throw new GUID_Exception("Invalid GUID format.", $"WDOS:FE1020 >> {guid}");
+                throw new GUID_Exception("Invalid GUID format.", $"WDOS:FE10200 >> {guid}");
             }
         }
     }

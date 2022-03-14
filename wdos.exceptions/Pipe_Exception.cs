@@ -1,22 +1,22 @@
-using System;
+﻿using System.IO;
 
 namespace wdos.exceptions
 {
-    public class GUID_Exception : Exception, IWDOS_Exception
+    public class Pipe_Exception : IOException, IWDOS_Exception
     {
-        public GUID_Exception()
+        public Pipe_Exception()
+        {
+            
+        }
+
+        public Pipe_Exception(string message) : base(message)
         {
 
         }
 
-        public GUID_Exception(string message) : base(message)
+        public Pipe_Exception(string message, string errdescr) : base(message)
         {
-
-        }
-
-        public GUID_Exception(string message, string err) : base(message)
-        {
-            ErrorDescribe = err;
+            ErrorDescribe = errdescr;
         }
 
         public string? ErrorDescribe { get; set; }

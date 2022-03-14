@@ -13,5 +13,12 @@ namespace wdos
     /// </summary>
     public partial class App : Application
     {
+        internal static MainWindow mainWin = new();
+        internal static PipeServer pipeServer = new();
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            mainWin.Show();
+        }
     }
 }

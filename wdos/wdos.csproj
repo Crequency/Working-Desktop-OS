@@ -11,4 +11,8 @@
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\wdos.global\wdos.global.csproj" />
+  </ItemGroup>
+
 </Project>
