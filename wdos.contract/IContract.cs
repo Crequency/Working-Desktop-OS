@@ -2,6 +2,7 @@ using System.ComponentModel;
 using System.Text.RegularExpressions;
 using wdos.exceptions;
 using wdos.global.Strings;
+using eheper = wdos.exceptions.ExceptionHelper;
 
 namespace wdos.contract
 {
@@ -84,7 +85,8 @@ namespace wdos.contract
             }
             else
             {
-                throw new GUID_Exception("Invalid GUID format.", $"WDOS:FE10200 >> {guid}");
+                throw new GUID_Exception("Invalid GUID format.",
+                    eheper.GenerateErrorDescr(IWDOS_Exception.ErrorType.DE, 10200, guid));
             }
         }
     }
