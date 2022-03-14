@@ -17,7 +17,6 @@
   <ItemGroup>
     <ProjectReference Include="..\..\wdos.contract\wdos.contract.csproj" />
     <ProjectReference Include="..\..\wdos.exceptions\wdos.exceptions.csproj" />
-    <ProjectReference Include="..\..\wdos\wdos.csproj" />
   </ItemGroup>
 
 </Project>
