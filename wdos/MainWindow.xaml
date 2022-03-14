@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:wdos"
         mc:Ignorable="d" WindowState="Maximized"
-        Icon="/source/logo.png"
+        Icon="/source/logo-blue.png"
         Title="WDOS" MinHeight="600" MinWidth="800" Background="Black">
     <Border x:Name="Screen">
         

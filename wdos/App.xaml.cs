@@ -18,12 +18,11 @@ namespace wdos
         internal static MainWindow mainWin = new();
         internal static PipeServer pipeServer = new();
 
-
         private void OS_StartUp()
         {
             mainWin.Show();
 
-            mainWin.Inject(new StartupUI());
+            mainWin.Inject(new StartupUI(), null);
         }
 
         private void Application_Startup(object sender, StartupEventArgs e)

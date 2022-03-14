@@ -17,6 +17,8 @@
                 <!--xmlns:wpfui="clr-namespace:WPFUI.Controls;assembly=WPFUI"-->
                 <ResourceDictionary Source="pack://application:,,,/WPFUI;component/Styles/Theme/Dark.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/WPFUI;component/Styles/WPFUI.xaml" />
+                <!--xmlns:aska="clr-namespace:Aska.WPF.Controls;assembly=Aska.WPF"-->
+                <ResourceDictionary Source="pack://application:,,,/Aska.WPF;component/Styles/PulseButton.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>

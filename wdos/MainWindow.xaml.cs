@@ -13,6 +13,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+#pragma warning disable CS8604 // 引用类型参数可能为 null。
+
 namespace wdos
 {
     /// <summary>
@@ -26,14 +28,38 @@ namespace wdos
 
             KeyDown += (_, e) =>
             {
-                
+                if (Keyboard.IsKeyDown(Key.RightAlt) && Keyboard.IsKeyDown(Key.Enter))
+                {
+                    switch (wsstate)
+                    {
+                        case WindowScreenState.FullScreen:
+                            wsstate = WindowScreenState.Windowful;
+                            WindowStyle = WindowStyle.SingleBorderWindow;
+                            break;
+                        case WindowScreenState.Windowful:
+                            wsstate = WindowScreenState.FullScreen;
+                            WindowStyle = WindowStyle.None;
+                            WindowState = WindowState.Normal;
+                            WindowState = WindowState.Maximized;
+                            break;
+                    }
+                }
             };
         }
 
-        internal void Inject(FrameworkElement element)
+        internal void Inject(FrameworkElement element, string? focuson)
         {
             Screen.Child = element;
+            if (focuson != null)
+            {
+                element.Loaded += (_, _) =>
+                {
+                    (element.FindName(focuson) as FrameworkElement)?.Focus();
+                };
+            }
         }
+
+        private WindowScreenState wsstate = WindowScreenState.Windowful;
 
         private enum WindowScreenState
         {
@@ -41,3 +67,5 @@ namespace wdos
         }
     }
 }
+
+#pragma warning restore CS8604 // 引用类型参数可能为 null。

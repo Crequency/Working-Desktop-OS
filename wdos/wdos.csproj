@@ -17,7 +17,9 @@
     <None Remove="source\img\seq.jpg" />
     <None Remove="source\img\space.jpg" />
     <None Remove="source\img\win10.jpg" />
-    <None Remove="source\logo.png" />
+    <None Remove="source\logo-blue.png" />
+    <None Remove="source\logo-green.png" />
+    <None Remove="source\logo-mid.png" />
   </ItemGroup>
 
   <ItemGroup>
@@ -49,7 +51,13 @@
     <Resource Include="source\img\win10.jpg">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
-    <Resource Include="source\logo.png">
+    <Resource Include="source\logo-blue.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\logo-green.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\logo-mid.png">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Resource>
   </ItemGroup>
@@ -66,6 +74,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\..\Aska.WPF\Aska.WPF.csproj" />
     <ProjectReference Include="..\wdos.global\wdos.global.csproj" />
   </ItemGroup>
 
