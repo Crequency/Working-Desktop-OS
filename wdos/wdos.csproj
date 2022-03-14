@@ -2,17 +2,83 @@
 
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
-    <TargetFramework>net6.0-windows</TargetFramework>
     <Nullable>enable</Nullable>
     <UseWPF>true</UseWPF>
+	<TargetFramework>net6.0-windows</TargetFramework>
+    <ApplicationIcon>logo.ico</ApplicationIcon>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="source\img\boom.jpg" />
+    <None Remove="source\img\earth.jpg" />
+    <None Remove="source\img\forest.jpg" />
+    <None Remove="source\img\king.jpg" />
+    <None Remove="source\img\night.jpg" />
+    <None Remove="source\img\seq.jpg" />
+    <None Remove="source\img\space.jpg" />
+    <None Remove="source\img\win10.jpg" />
+    <None Remove="source\logo.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="logo.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="source\img\boom.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\img\earth.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\img\forest.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\img\king.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\img\night.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\img\seq.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\img\space.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\img\win10.jpg">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="source\logo.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+  </ItemGroup>
 
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="HandyControl" Version="3.3.0" />
+    <PackageReference Include="MaterialDesignColors" Version="2.0.4" />
+    <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
+    <PackageReference Include="WPF-UI" Version="1.2.1" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\wdos.global\wdos.global.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="builtIn\LogIn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="builtIn\StartupUI.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
+    <None Update="ScreenSelecter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </None>
   </ItemGroup>
 
 </Project>

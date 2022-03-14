@@ -6,6 +6,8 @@ using System.Linq;
 using System.Threading.Tasks;
 using System.Windows;
 
+using wdos.builtIn;
+
 namespace wdos
 {
     /// <summary>
@@ -16,9 +18,24 @@ namespace wdos
         internal static MainWindow mainWin = new();
         internal static PipeServer pipeServer = new();
 
-        private void Application_Startup(object sender, StartupEventArgs e)
+
+        private void OS_StartUp()
         {
             mainWin.Show();
+
+            mainWin.Inject(new StartupUI());
+        }
+
+        private void Application_Startup(object sender, StartupEventArgs e)
+        {
+            if (helper.VersionHelper.IsNewest())
+            {
+                OS_StartUp();
+            }
+            else
+            {
+                helper.VersionHelper.UpdateVersion();
+            }
         }
     }
 }
