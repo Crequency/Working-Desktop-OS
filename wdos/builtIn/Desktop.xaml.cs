@@ -18,34 +18,38 @@ using System.Windows.Shapes;
 namespace wdos.builtIn
 {
     /// <summary>
-    /// Startup.xaml 的交互逻辑
+    /// Desktop.xaml 的交互逻辑
     /// </summary>
-    public partial class StartupUI : UserControl
+    public partial class Desktop : UserControl
     {
-        public StartupUI()
+        public Desktop()
         {
             InitializeComponent();
 
-            new Thread(() =>
+            KeyDown += (_, _) =>
             {
-                Thread.Sleep(500);
-                Dispatcher.BeginInvoke(new Action(() =>
+                if(Keyboard.IsKeyDown(Key.LeftCtrl) &&
+                    Keyboard.IsKeyDown(Key.LeftShift) &&
+                    Keyboard.IsKeyDown(Key.L))
                 {
                     BeginAnimation(OpacityProperty, new DoubleAnimation()
                     {
-                        From = 0, To = 1, Duration = new TimeSpan(0, 0, 0, 0, 400),
+                        From = 1, To = 0, Duration = new TimeSpan(0, 0, 0, 0, 300),
                         EasingFunction = new CubicEase()
                         {
                             EasingMode = EasingMode.EaseOut
                         }
                     });
-                }));
-                Thread.Sleep(6000);
-                Dispatcher.BeginInvoke(new Action(() =>
-                {
-                    App.mainWin.Inject(new LogIn(2000), "PasswdBox");
-                }));
-            }).Start();
+                    new Thread(() =>
+                    {
+                        Thread.Sleep(300);
+                        Dispatcher.BeginInvoke(new Action(() =>
+                        {
+                            App.mainWin.Inject(new LogIn(300), "PasswdBox");
+                        }));
+                    }).Start();
+                }
+            };
         }
     }
 }

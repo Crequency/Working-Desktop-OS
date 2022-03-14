@@ -4,12 +4,21 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wdos.builtIn"
+             xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
              mc:Ignorable="d" Opacity="0"
              x:Name="LoginView"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <Storyboard x:Key="FadeIn_Login" Timeline.DesiredFrameRate="90">
             <DoubleAnimation BeginTime="00:00:00" From="0" To="1" Duration="00:00:00.6"
+                             Storyboard.TargetName="LoginView" Storyboard.TargetProperty="Opacity">
+                <DoubleAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseInOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <Storyboard x:Key="FadeOut_Login" Timeline.DesiredFrameRate="90">
+            <DoubleAnimation BeginTime="00:00:00" From="1" To="0" Duration="00:00:00.3"
                              Storyboard.TargetName="LoginView" Storyboard.TargetProperty="Opacity">
                 <DoubleAnimation.EasingFunction>
                     <CubicEase EasingMode="EaseInOut"/>
@@ -87,6 +96,16 @@
                     <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="Black"/>
                 </Border.Effect>
             </Border>
+            <StackPanel VerticalAlignment="Top" Margin="40,100,40,0">
+                <Image Source="/source/logo-mid.png" Width="96" Height="96"/>
+                <TextBlock Text="WDOS" HorizontalAlignment="Center" Margin="0,30,0,0"
+                           FontSize="28" Foreground="WhiteSmoke"/>
+                <PasswordBox x:Name="PasswdBox" Margin="0,30,0,0" Width="250" PasswordChar="●"/>
+                <Button Style="{StaticResource MaterialDesignRaisedButton}" Foreground="WhiteSmoke"
+                        Background="Black" BorderBrush="Transparent" Width="80" Height="40"
+                        Margin="0,30,0,0" HorizontalAlignment="Center" Content="登 录"
+                        Click="LogIn_Click"/>
+            </StackPanel>
         </Grid>
     </Grid>
 </UserControl>

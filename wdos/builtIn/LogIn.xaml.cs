@@ -22,7 +22,7 @@ namespace wdos.builtIn
     /// </summary>
     public partial class LogIn : UserControl
     {
-        public LogIn()
+        public LogIn(int delay)
         {
             InitializeComponent();
             MouseDown += (_, e) =>
@@ -48,7 +48,7 @@ namespace wdos.builtIn
             {
                 new Thread(() =>
                 {
-                    Thread.Sleep(2000);
+                    Thread.Sleep(delay);
                     Dispatcher.BeginInvoke(new Action(() =>
                     {
                         (Resources["FadeIn_Login"] as Storyboard)?.Begin();
@@ -62,6 +62,19 @@ namespace wdos.builtIn
         private enum UIState
         {
             NotLogin = 0, InLogin = 1
+        }
+
+        private void LogIn_Click(object sender, RoutedEventArgs e)
+        {
+            (Resources["FadeOut_Login"] as Storyboard)?.Begin();
+            new Thread(() =>
+            {
+                Thread.Sleep(300);
+                Dispatcher.BeginInvoke(new Action(() =>
+                {
+                    App.mainWin.Inject(new Desktop(), "StartMenuBtn");
+                }));
+            }).Start();
         }
     }
 }
