@@ -50,7 +50,7 @@
             <DoubleAnimation BeginTime="00:00:00.0" From="0.15" To="0" Duration="00:00:00.8"
                              Storyboard.TargetName="BackImageMask" Storyboard.TargetProperty="Opacity">
                 <DoubleAnimation.EasingFunction>
-                    <CubicEase EasingMode="EaseInOut"/>
+                    <CubicEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
             <ThicknessAnimation BeginTime="00:00:00.0" From="0, 0, 0, 0" To="0, 0, -400, 0" Duration="00:00:00.3"
