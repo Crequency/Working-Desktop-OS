@@ -76,5 +76,10 @@ namespace wdos.builtIn
                 }));
             }).Start();
         }
+
+        private void ShutDown_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }

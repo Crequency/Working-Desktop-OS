@@ -17,6 +17,18 @@
                     <CubicEase EasingMode="EaseInOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
+            <ThicknessAnimation BeginTime="0:0:0.6" From="0,-150,0,0" To="0,100,0,0" Duration="0:0:0.3"
+                                Storyboard.TargetName="CenterInfoView" Storyboard.TargetProperty="Margin">
+                <ThicknessAnimation.EasingFunction>
+                    <BackEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
+            <ThicknessAnimation BeginTime="0:0:0.6" From="20,0,20,-60" To="20,0,20,20" Duration="0:0:0.3"
+                                Storyboard.TargetName="OptionsPanel" Storyboard.TargetProperty="Margin">
+                <ThicknessAnimation.EasingFunction>
+                    <BackEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
         </Storyboard>
         <Storyboard x:Key="FadeOut_Login" Timeline.DesiredFrameRate="90">
             <DoubleAnimation BeginTime="00:00:00" From="1" To="0" Duration="00:00:00.3"
@@ -27,6 +39,12 @@
             </DoubleAnimation>
         </Storyboard>
         <Storyboard x:Key="EnterLogin_Login" Timeline.DesiredFrameRate="90">
+            <ThicknessAnimation BeginTime="0:0:0" From="20,0,20,20" To="20,0,20,-60" Duration="0:0:0.3"
+                                Storyboard.TargetName="OptionsPanel" Storyboard.TargetProperty="Margin">
+                <ThicknessAnimation.EasingFunction>
+                    <BackEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
             <DoubleAnimation BeginTime="00:00:00.0" From="0" To="0.15" Duration="00:00:00.8"
                              Storyboard.TargetName="BackImageMask" Storyboard.TargetProperty="Opacity">
                 <DoubleAnimation.EasingFunction>
@@ -61,6 +79,12 @@
                     <!--<BounceEase EasingMode="EaseOut" Bounces="1" Bounciness="6"/>-->
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
+            <ThicknessAnimation BeginTime="0:0:0.3" From="20,0,20,-60" To="20,0,20,20" Duration="0:0:0.3"
+                                Storyboard.TargetName="OptionsPanel" Storyboard.TargetProperty="Margin">
+                <ThicknessAnimation.EasingFunction>
+                    <BackEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
             <ThicknessAnimation BeginTime="00:00:00.3" From="0, 100, 400, 0" To="0, 100, 0, 0" Duration="00:00:00.3"
                              Storyboard.TargetName="CenterInfoView" Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
@@ -72,7 +96,7 @@
     <Grid>
         <Image x:Name="ForeBackImage" Source="/source/img/boom.jpg" Stretch="UniformToFill"/>
         <Border x:Name="BackImageMask" Background="Black" Opacity="0"/>
-        <StackPanel x:Name="CenterInfoView" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,100,0,0">
+        <StackPanel x:Name="CenterInfoView" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-150,0,0">
             <TextBlock Text="07:16" FontSize="96" Foreground="WhiteSmoke" FontWeight="Bold">
                 <TextBlock.Effect>
                     <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="LightGray"/>
@@ -86,9 +110,22 @@
             </TextBlock>
         </StackPanel>
         <StackPanel x:Name="OptionsPanel" Orientation="Horizontal" HorizontalAlignment="Right"
-                    VerticalAlignment="Bottom" Margin="20">
-            <Button Style="{StaticResource MaterialDesignFlatButton}">
-                <Path/>
+                    VerticalAlignment="Bottom" Margin="20,0,20,-60">
+            <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
+                    Margin="5">
+                <Path Data="{StaticResource More}" Stroke="White" Fill="White"/>
+            </Button>
+            <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
+                    Margin="5">
+                <Path Data="{StaticResource Message}" Stroke="White" Fill="White"/>
+            </Button>
+            <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
+                    Margin="5">
+                <Path Data="{StaticResource Restore}" Stroke="White" Fill="White"/>
+            </Button>
+            <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
+                    Margin="5" Click="ShutDown_Btn_Click">
+                <Path Data="{StaticResource Power}" Stroke="White" Fill="White"/>
             </Button>
         </StackPanel>
         <Grid x:Name="AccountBorder" HorizontalAlignment="Right" Width="400" Margin="0,0,-400,0">
