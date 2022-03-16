@@ -4,10 +4,27 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wdos.builtIn.controls"
-             mc:Ignorable="d" 
-             d:DesignHeight="40" d:DesignWidth="40">
-    <Grid>
-        <Path Width="40" Height="40" Stretch="UniformToFill" Fill="White" Data="{StaticResource WDOS_LOGO_1}"/>
-        <Path Width="40" Height="40" Fill="Red" Stroke="Blue" Data=""/>
-    </Grid>
+             mc:Ignorable="d" x:Name="WDOS_Icon"
+             d:DesignHeight="101" d:DesignWidth="101">
+    <UserControl.Effect>
+        <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="Black"/>
+    </UserControl.Effect>
+    <Viewbox Stretch="UniformToFill">
+        <Grid Width="101" Height="101">
+            <Path Width="100" Height="100" Data="M 0,50 A 50,50 45 1 1 0,51 Z" HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Path.Fill>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0,0">
+                        <GradientStop Color="#FF92FFC0" Offset="0"/>
+                        <GradientStop Color="#FF002661" Offset="1"/>
+                    </LinearGradientBrush>
+                </Path.Fill>
+            </Path>
+            <Path Width="100" Height="100" Fill="Transparent" Data="M 10,50 A 40,40 45 1 1 10,51 Z" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Path Width="100" Height="100" Fill="{Binding ThemeColor, ElementName=WDOS_Icon}" Data="M 30,85.1 A 40,40 45 0 1 30,15.9 Z" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Path Width="100" Height="100" Fill="{Binding ThemeColor, ElementName=WDOS_Icon}" Data="M 50,10.5 A 40,40 45 0 1 50,90.5 Z" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Path Width="100" Height="100" Fill="{Binding ThemeColor, ElementName=WDOS_Icon}" Data="M 40,11.75 A 40,40 45 0 1 50,10.5 Z" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Path Width="100" Height="100" Fill="{Binding ThemeColor, ElementName=WDOS_Icon}" Data="M 40,89.25 A 40,40 45 0 0 50,90.5 Z" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+            <Path Width="100" Height="100" Fill="{Binding ThemeColor, ElementName=WDOS_Icon}" Data="M 40 11.75 50.5 10.5 50.5 90.5 40 89.25 40 11.75 Z" HorizontalAlignment="Left" VerticalAlignment="Top"/>
+        </Grid>
+    </Viewbox>
 </UserControl>

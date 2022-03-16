@@ -4,6 +4,7 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wdos.builtIn"
+             xmlns:icon="clr-namespace:wdos.builtIn.controls"
              mc:Ignorable="d"
              xmlns:aska="clr-namespace:Aska.WPF.Controls;assembly=Aska.WPF"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -24,18 +25,16 @@
             <DockPanel VerticalAlignment="Center" Margin="10,0">
                 <aska:FishEyePanel Height="50" Width="200" Margin="10" DockPanel.Dock="Left">
                     <Button x:Name="StartMenuBtn" Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
-                        <Image Source="/source/logo-blue.png" Stretch="UniformToFill"/>
+                        <icon:wdos_icon/>
                     </Button>
                     <Button Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
-                        <Grid>
-                            
-                        </Grid>
+                        <icon:wdos_icon/>
                     </Button>
                     <Button Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
-                        <Image Source="/source/logo-green.png" Stretch="UniformToFill"/>
+                        <icon:wdos_icon/>
                     </Button>
                     <Button Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
-                        <Image Source="/source/logo-green.png" Stretch="UniformToFill"/>
+                        <icon:wdos_icon/>
                     </Button>
                 </aska:FishEyePanel>
                 <TextBlock/>

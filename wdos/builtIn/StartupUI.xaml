@@ -4,12 +4,14 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wdos.builtIn"
+             xmlns:icon="clr-namespace:wdos.builtIn.controls"
              mc:Ignorable="d" Opacity="0"
              xmlns:hc="https://handyorg.github.io/handycontrol"
              d:DesignHeight="450" d:DesignWidth="800">
     <Border>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-            <Image Width="160" Height="160" Source="/source/logo-blue.png" Stretch="UniformToFill"/>
+            <!--<Image Width="160" Height="160" Source="/source/logo-blue.png" Stretch="UniformToFill"/>-->
+            <icon:wdos_icon Width="160" Height="160"/>
             <hc:LoadingCircle IsRunning="True" Margin="0, 70, 0, 0" Width="64" Height="64"/>
         </StackPanel>
     </Border>
