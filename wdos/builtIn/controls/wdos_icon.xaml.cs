@@ -27,15 +27,16 @@ namespace wdos.builtIn.controls
             InitializeComponent();
         }
 
-        public SolidColorBrush ThemeColor
+        public LinearGradientBrush ThemeColor
         {
-            get { return (SolidColorBrush)GetValue(ThemeColorProperty); }
+            get { return (LinearGradientBrush)GetValue(ThemeColorProperty); }
             set { SetValue(ThemeColorProperty, value); }
         }
 
         public static readonly DependencyProperty ThemeColorProperty =
-            DependencyProperty.Register("ThemeColor", typeof(SolidColorBrush), typeof(wdos_icon),
-                new PropertyMetadata((SolidColorBrush)new BrushConverter().ConvertFrom("#FF506496")));
+            DependencyProperty.Register("ThemeColor", typeof(LinearGradientBrush), typeof(wdos_icon),
+                new PropertyMetadata(new LinearGradientBrush(Color.FromArgb(255, 27, 27, 27),
+                    Color.FromArgb(255, 00, 26, 61), new Point(0, 0), new Point(1, 1))));
 
     }
 }
