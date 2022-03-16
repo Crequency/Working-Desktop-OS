@@ -28,7 +28,7 @@
                         <icon:wdos_icon/>
                     </Button>
                     <Button Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
-                        <icon:wdos_icon/>
+                        <icon:wdos_icon_search/>
                     </Button>
                     <Button Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
                         <icon:wdos_icon/>
