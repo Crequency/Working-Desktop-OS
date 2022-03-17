@@ -37,6 +37,26 @@
                         <icon:wdos_icon/>
                     </Button>
                 </aska:FishEyePanel>
+                <Grid DockPanel.Dock="Right" Margin="10,10,4,10">
+                    <Border Grid.RowSpan="2" Opacity="0.1" CornerRadius="10">
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="White" Offset="0"/>
+                                <GradientStop Color="WhiteSmoke" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                    </Border>
+                    <Grid Margin="15,0,7,0">
+                        <Grid.RowDefinitions>
+                            <RowDefinition/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+                        <TextBlock x:Name="TimeBlock" VerticalAlignment="Center" Grid.Row="0" FontSize="12"
+                                   HorizontalAlignment="Right" Text="07:16:30" Foreground="White"/>
+                        <TextBlock x:Name="DateBlock" VerticalAlignment="Center" Grid.Row="1" FontSize="12"
+                                   HorizontalAlignment="Right" Text="2022-03-17" Foreground="White"/>
+                    </Grid>
+                </Grid>
                 <TextBlock/>
             </DockPanel>
         </Grid>

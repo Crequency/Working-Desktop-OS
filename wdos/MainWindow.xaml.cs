@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -45,6 +46,12 @@ namespace wdos
                     }
                 }
             };
+        }
+
+        protected override void OnClosing(CancelEventArgs e)
+        {
+            App.Terminate();
+            base.OnClosing(e);
         }
 
         internal void Inject(FrameworkElement element, string? focuson)

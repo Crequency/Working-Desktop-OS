@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 using System.Windows;
 
 using wdos.builtIn;
+using wdos.builtIn.services;
 
 namespace wdos
 {
@@ -17,12 +18,18 @@ namespace wdos
     {
         internal static MainWindow mainWin = new();
         internal static PipeServer pipeServer = new();
+        internal static TimeRegister timeRegister = new();
 
         private void OS_StartUp()
         {
             mainWin.Show();
 
             mainWin.Inject(new StartupUI(), null);
+        }
+
+        internal static void Terminate()
+        {
+            timeRegister.Shutdown();
         }
 
         private void Application_Startup(object sender, StartupEventArgs e)

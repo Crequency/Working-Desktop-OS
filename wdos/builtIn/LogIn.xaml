@@ -97,12 +97,12 @@
         <Image x:Name="ForeBackImage" Source="/source/img/boom.jpg" Stretch="UniformToFill"/>
         <Border x:Name="BackImageMask" Background="Black" Opacity="0"/>
         <StackPanel x:Name="CenterInfoView" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-150,0,0">
-            <TextBlock Text="07:16" FontSize="96" Foreground="WhiteSmoke" FontWeight="Bold">
+            <TextBlock x:Name="TimeBlock" Text="07:16" FontSize="96" Foreground="WhiteSmoke" FontWeight="Bold">
                 <TextBlock.Effect>
                     <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="LightGray"/>
                 </TextBlock.Effect>
             </TextBlock>
-            <TextBlock Text="3月14日, 星期一" HorizontalAlignment="Center" FontSize="18"
+            <TextBlock x:Name="DateBlock" Text="3月14日, 星期一" HorizontalAlignment="Center" FontSize="18"
                        Foreground="WhiteSmoke" FontWeight="Bold">
                 <TextBlock.Effect>
                     <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="LightGray"/>
@@ -112,15 +112,15 @@
         <StackPanel x:Name="OptionsPanel" Orientation="Horizontal" HorizontalAlignment="Right"
                     VerticalAlignment="Bottom" Margin="20,0,20,-60">
             <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
-                    Margin="5">
+                    Margin="5" Click="More_Btn_Click">
                 <Path Data="{StaticResource More}" Stroke="White" Fill="White"/>
             </Button>
             <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
-                    Margin="5">
+                    Margin="5" Click="Message_Btn_Click">
                 <Path Data="{StaticResource Message}" Stroke="White" Fill="White"/>
             </Button>
             <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
-                    Margin="5">
+                    Margin="5" Click="Restore_Btn_Click">
                 <Path Data="{StaticResource Restore}" Stroke="White" Fill="White"/>
             </Button>
             <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"

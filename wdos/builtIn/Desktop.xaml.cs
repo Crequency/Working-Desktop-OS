@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using wdos.builtIn.services;
+
 namespace wdos.builtIn
 {
     /// <summary>
@@ -22,6 +24,8 @@ namespace wdos.builtIn
     /// </summary>
     public partial class Desktop : UserControl
     {
+        private readonly uint[] time_control_id = new uint[2];
+
         public Desktop()
         {
             InitializeComponent();
@@ -40,6 +44,7 @@ namespace wdos.builtIn
                             EasingMode = EasingMode.EaseOut
                         }
                     });
+                    ReleaseResources();
                     new Thread(() =>
                     {
                         Thread.Sleep(300);
@@ -50,6 +55,25 @@ namespace wdos.builtIn
                     }).Start();
                 }
             };
+
+            Loaded += (_, _) =>
+            {
+                time_control_id[0] = App.timeRegister.RegisterControl(TimeBlock,
+                    TimeRegister.ElementType.TextBlock, "HH:mm:ss");
+                time_control_id[1] = App.timeRegister.RegisterControl(DateBlock,
+                    TimeRegister.ElementType.TextBlock, "yyyy-MM-dd");
+            };
+        }
+
+        private void ReleaseResources()
+        {
+            App.timeRegister.UnRegisterControl(time_control_id[0]);
+            App.timeRegister.UnRegisterControl(time_control_id[1]);
+        }
+
+        ~Desktop()
+        {
+            ReleaseResources();
         }
     }
 }

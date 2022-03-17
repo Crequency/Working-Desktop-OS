@@ -15,6 +15,8 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
+using wdos.builtIn.services;
+
 namespace wdos.builtIn
 {
     /// <summary>
@@ -22,6 +24,8 @@ namespace wdos.builtIn
     /// </summary>
     public partial class LogIn : UserControl
     {
+        private readonly uint[] time_control_id = new uint[2];
+
         public LogIn(int delay)
         {
             InitializeComponent();
@@ -54,6 +58,10 @@ namespace wdos.builtIn
                         (Resources["FadeIn_Login"] as Storyboard)?.Begin();
                     }));
                 }).Start();
+                time_control_id[0] = App.timeRegister.RegisterControl(TimeBlock,
+                    TimeRegister.ElementType.TextBlock, "HH:mm");
+                time_control_id[1] = App.timeRegister.RegisterControl(DateBlock,
+                    TimeRegister.ElementType.TextBlock, "M");
             };
         }
 
@@ -67,6 +75,7 @@ namespace wdos.builtIn
         private void LogIn_Click(object sender, RoutedEventArgs e)
         {
             (Resources["FadeOut_Login"] as Storyboard)?.Begin();
+            ReleaseResources();
             new Thread(() =>
             {
                 Thread.Sleep(300);
@@ -80,6 +89,32 @@ namespace wdos.builtIn
         private void ShutDown_Btn_Click(object sender, RoutedEventArgs e)
         {
 
+        }
+
+        private void Restore_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Message_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void More_Btn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ReleaseResources()
+        {
+            App.timeRegister.UnRegisterControl(time_control_id[0]);
+            App.timeRegister.UnRegisterControl(time_control_id[1]);
+        }
+
+        ~LogIn()
+        {
+            ReleaseResources();
         }
     }
 }
