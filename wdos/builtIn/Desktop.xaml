@@ -64,16 +64,20 @@
             </Border>
             <DockPanel VerticalAlignment="Center" Margin="10,0">
                 <aska:FishEyePanel Height="50" Width="200" Margin="10" DockPanel.Dock="Left">
-                    <Button x:Name="StartMenuBtn" Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
+                    <Button x:Name="StartMenuBtn" Style="{StaticResource PulseButton}"
+                            Width="40" Height="40" Margin="5,0">
                         <icon:wdos_icon/>
                     </Button>
-                    <Button Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
+                    <Button Style="{StaticResource PulseButton}"
+                            Width="40" Height="40" Margin="5,0">
                         <icon:wdos_icon_search/>
                     </Button>
-                    <Button Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
-                        <icon:wdos_icon/>
+                    <Button Style="{StaticResource PulseButton}"
+                            Width="40" Height="40" Margin="5,0">
+                        <icon:wdos_icon_vdesk/>
                     </Button>
-                    <Button Style="{StaticResource PulseButton}" Width="40" Height="40" Margin="5,0">
+                    <Button Style="{StaticResource PulseButton}"
+                            Width="40" Height="40" Margin="5,0">
                         <icon:wdos_icon/>
                     </Button>
                 </aska:FishEyePanel>
