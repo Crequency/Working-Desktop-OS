@@ -19,7 +19,7 @@
 </p>
 
 ----
-
+|------------|---------------------------------|
 <!-- TOC -->
 
 - [🥪 Version - Features 🔰](#markdown-header-🥪-version-features-🔰)
@@ -48,6 +48,8 @@
 | Alpha   | nothing...<br>still developing... | The first version of WDOS |
 
 <a id="markdown-markdown-header-📄-中文文档" name="markdown-header-📄-中文文档"></a>
+| 🅰️ Alpha   | 🤣 nothing...<br>developing... |
+
 # 📄 中文文档
 <a id="markdown-markdown-header-✨-介绍" name="markdown-header-✨-介绍"></a>
 ## ✨ 介绍
