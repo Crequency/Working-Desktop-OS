@@ -10,14 +10,54 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <Storyboard x:Key="ModernTaskBar">
-            
+
         </Storyboard>
     </UserControl.Resources>
     <Grid>
         <Image Source="/source/img/win10.jpg" Stretch="UniformToFill"/>
-        <Grid VerticalAlignment="Bottom">
-            <Border Height="60" Margin="10" Background="Black" CornerRadius="10"
-                    Opacity="0.5">
+
+        <Canvas x:Name="DesktopContainer"/>
+
+        <Grid x:Name="TaskBar" VerticalAlignment="Bottom" Height="80">
+            <Border x:Name="TaskBar_Back" Height="60" Margin="10" Background="Black" CornerRadius="10"
+                    Opacity="0.5" RenderTransformOrigin="0.5,0.5">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="UIElement.MouseDown">
+                        <BeginStoryboard>
+                            <Storyboard Timeline.DesiredFrameRate="90">
+                                <DoubleAnimation From="1" To="1.003" Duration="0:0:0.15" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BackEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation From="1" To="1.04" Duration="0:0:0.15" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BackEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation From="1.003" To="1" Duration="0:0:0.15" BeginTime="0:0:0.15"
+                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BackEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation From="1.04" To="1" Duration="0:0:0.15" BeginTime="0:0:0.15"
+                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BackEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
                 <Border.Effect>
                     <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="Black"/>
                 </Border.Effect>
@@ -95,13 +135,19 @@
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
-                                    <DoubleAnimation From="1.15" To="0.95" Duration="0:0:0.1" BeginTime="0:0:0.1"
+                                </Storyboard>
+                            </BeginStoryboard>
+                        </EventTrigger>
+                        <EventTrigger RoutedEvent="UIElement.MouseUp">
+                            <BeginStoryboard>
+                                <Storyboard Timeline.DesiredFrameRate="90">
+                                    <DoubleAnimation From="1.15" To="0.95" Duration="0:0:0.1" BeginTime="0:0:0"
                                                      Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
-                                    <DoubleAnimation From="1.15" To="0.95" Duration="0:0:0.1" BeginTime="0:0:0.1"
+                                    <DoubleAnimation From="1.15" To="0.95" Duration="0:0:0.1" BeginTime="0:0:0"
                                                      Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
@@ -122,7 +168,7 @@
                             <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="Black"/>
                         </Border.Effect>
                     </Border>
-                    <Grid Margin="15,0,7,0">
+                    <Grid Margin="15,0,7.5,0">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
@@ -133,7 +179,7 @@
                                    HorizontalAlignment="Right" Text="2022-03-17" Foreground="White"/>
                     </Grid>
                 </Grid>
-                <TextBlock/>
+                <Border/>
             </DockPanel>
         </Grid>
     </Grid>
