@@ -17,6 +17,13 @@
 🌏 <a href="#-中文文档">&nbsp;中文&nbsp;</a> | <a href="#-english-docs">English</a> 🌏<br>
 🔗 <a href="https://www.wdos.online">官网主页 - Home Page</a> | <a href="https://docs.wdos.online">官方文档 - Official Docs</a> 🗒
 </p>
+<p align="center">
+<img alt="GitHub issues" src="https://img.shields.io/github/issues/Catrol-org/Working-Desktop-OS?style=flat-square">
+<img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/Catrol-org/Working-Desktop-OS?style=flat-square">
+<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Catrol-org/Working-Desktop-OS?style=flat-square">
+<img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/Catrol-org/Working-Desktop-OS?style=flat-square">
+<img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/Catrol-org/Working-Desktop-OS?style=flat-square">
+</p>
 
 ----
 
