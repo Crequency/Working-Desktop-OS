@@ -70,10 +70,5 @@ namespace wdos.builtIn
             App.timeRegister.UnRegisterControl(time_control_id[0]);
             App.timeRegister.UnRegisterControl(time_control_id[1]);
         }
-
-        ~Desktop()
-        {
-            ReleaseResources();
-        }
     }
 }
