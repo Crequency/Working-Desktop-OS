@@ -18,11 +18,11 @@
 🔗 <a href="https://www.wdos.online">官网主页 - Home Page</a> | <a href="https://docs.wdos.online">官方文档 - Official Docs</a> 🗒
 </p>
 <p align="center">
-<img alt="GitHub issues" src="https://img.shields.io/github/issues/Catrol-org/Working-Desktop-OS?style=flat-square">
-<img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/Catrol-org/Working-Desktop-OS?style=flat-square">
-<img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Catrol-org/Working-Desktop-OS?style=flat-square">
-<img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/Catrol-org/Working-Desktop-OS?style=flat-square">
-<img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/Catrol-org/Working-Desktop-OS?style=flat-square">
+<a href="https://github.com/Catrol-org/Working-Desktop-OS/issues" target="_blank"><img alt="GitHub issues" src="https://img.shields.io/github/issues/Catrol-org/Working-Desktop-OS?style=flat-square"></a>
+<a href="https://github.com/Catrol-org/Working-Desktop-OS/issues?q=is%3Aclosed" target="_blank"><img alt="GitHub closed issues" src="https://img.shields.io/github/issues-closed/Catrol-org/Working-Desktop-OS?style=flat-square"></a>
+<a href="https://github.com/Catrol-org/Working-Desktop-OS/pulls" target="_blank"><img alt="GitHub pull requests" src="https://img.shields.io/github/issues-pr/Catrol-org/Working-Desktop-OS?style=flat-square"></a>
+<a href="https://github.com/Catrol-org/Working-Desktop-OS/pulls?q=is%3Aclosed" target="_blank"><img alt="GitHub closed pull requests" src="https://img.shields.io/github/issues-pr-closed/Catrol-org/Working-Desktop-OS?style=flat-square"></a>
+<a href="https://github.com/Catrol-org/Working-Desktop-OS/milestones" target="_blank"><img alt="GitHub milestones" src="https://img.shields.io/github/milestones/all/Catrol-org/Working-Desktop-OS?style=flat-square"></a>
 </p>
 
 ----
