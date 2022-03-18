@@ -27,6 +27,8 @@
 
 ----
 
+<a href="https://www.wdos.online/" target="_blank"><img align="right" width="200" height="200" src="https://source.catrol.cn/icons/Project/Catrol/WDOS/logo2-mid.png"></img></a>
+
 <!-- TOC -->
 
 - [🥪 Version - Features 🔰](#markdown-header-🥪-version-features-🔰)
