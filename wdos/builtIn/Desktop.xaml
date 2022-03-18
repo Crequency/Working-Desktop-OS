@@ -9,18 +9,60 @@
              xmlns:aska="clr-namespace:Aska.WPF.Controls;assembly=Aska.WPF"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        <!--#region 切换到 -> 现代样式任务栏 -> ModernTaskBar -->
         <Storyboard x:Key="ModernTaskBar">
-
+            <ThicknessAnimation From="0" To="10" Duration="0:0:0.3" BeginTime="0:0:0"
+                                Storyboard.TargetName="TaskBar_Back" Storyboard.TargetProperty="Margin">
+                <ThicknessAnimation.EasingFunction>
+                    <CubicEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
+            <ThicknessAnimation From="0" To="10,0" Duration="0:0:0.3" BeginTime="0:0:0"
+                                Storyboard.TargetName="TaskBar_Container" Storyboard.TargetProperty="Margin">
+                <ThicknessAnimation.EasingFunction>
+                    <BackEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                     Storyboard.TargetName="TaskBar_Container" From="10" To="0" Duration="0:0:0.3">
+                <DoubleAnimation.EasingFunction>
+                    <BackEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
         </Storyboard>
+        <!--#endregion-->
+        <!--#region 切换到 -> 贴靠样式任务栏 -> DockTaskBar -->
+        <Storyboard x:Key="DockTaskBar">
+            <ThicknessAnimation From="10" To="0" Duration="0:0:0.4" BeginTime="0:0:0"
+                                Storyboard.TargetName="TaskBar_Back" Storyboard.TargetProperty="Margin">
+                <ThicknessAnimation.EasingFunction>
+                    <BackEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
+            <ThicknessAnimation From="10,0" To="0" Duration="0:0:0.3" BeginTime="0:0:0"
+                                Storyboard.TargetName="TaskBar_Container" Storyboard.TargetProperty="Margin">
+                <ThicknessAnimation.EasingFunction>
+                    <BackEase EasingMode="EaseOut"/>
+                </ThicknessAnimation.EasingFunction>
+            </ThicknessAnimation>
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
+                                     Storyboard.TargetName="TaskBar_Container" From="0" To="10" Duration="0:0:0.3">
+                <DoubleAnimation.EasingFunction>
+                    <BackEase EasingMode="EaseOut"/>
+                </DoubleAnimation.EasingFunction>
+            </DoubleAnimation>
+        </Storyboard>
+        <!--#endregion-->
     </UserControl.Resources>
     <Grid>
-        <Image Source="/source/img/win10.jpg" Stretch="UniformToFill"/>
+        <Image x:Name="Desktop_Back" Source="/source/img/win10.jpg" Stretch="UniformToFill"/>
 
-        <Canvas x:Name="DesktopContainer"/>
+        <Canvas x:Name="Desktop_Container"/>
 
         <Grid x:Name="TaskBar" VerticalAlignment="Bottom" Height="80">
+            <!--#region 任务栏背景 -->
             <Border x:Name="TaskBar_Back" Height="60" Margin="10" Background="Black" CornerRadius="10"
-                    Opacity="0.5" RenderTransformOrigin="0.5,0.5">
+                    Opacity="0.5" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="1" ScaleY="1"/>
@@ -42,13 +84,19 @@
                                         <BackEase EasingMode="EaseOut"/>
                                     </DoubleAnimation.EasingFunction>
                                 </DoubleAnimation>
-                                <DoubleAnimation From="1.003" To="1" Duration="0:0:0.15" BeginTime="0:0:0.15"
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="UIElement.MouseUp">
+                        <BeginStoryboard>
+                            <Storyboard Timeline.DesiredFrameRate="90">
+                                <DoubleAnimation From="1.003" To="1" Duration="0:0:0.15" BeginTime="0:0:0"
                                                      Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
                                     <DoubleAnimation.EasingFunction>
                                         <BackEase EasingMode="EaseOut"/>
                                     </DoubleAnimation.EasingFunction>
                                 </DoubleAnimation>
-                                <DoubleAnimation From="1.04" To="1" Duration="0:0:0.15" BeginTime="0:0:0.15"
+                                <DoubleAnimation From="1.04" To="1" Duration="0:0:0.15" BeginTime="0:0:0"
                                                      Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
                                     <DoubleAnimation.EasingFunction>
                                         <BackEase EasingMode="EaseOut"/>
@@ -62,7 +110,14 @@
                     <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="Black"/>
                 </Border.Effect>
             </Border>
-            <DockPanel VerticalAlignment="Center" Margin="10,0">
+            <!--#endregion-->
+            <DockPanel x:Name="TaskBar_Container" VerticalAlignment="Center" Margin="10,0" RenderTransformOrigin="0.5,0.5">
+                <DockPanel.RenderTransform>
+                    <TransformGroup>
+                        <TranslateTransform X="0" Y="0"/>
+                    </TransformGroup>
+                </DockPanel.RenderTransform>
+                <!--#region 任务栏锁定图标 -->
                 <aska:FishEyePanel Height="50" Width="200" Margin="10" DockPanel.Dock="Left">
                     <Button x:Name="StartMenuBtn" Style="{StaticResource PulseButton}"
                             Width="40" Height="40" Margin="5,0">
@@ -78,9 +133,11 @@
                     </Button>
                     <Button Style="{StaticResource PulseButton}"
                             Width="40" Height="40" Margin="5,0">
-                        <icon:wdos_icon/>
+                        <icon:wdos_icon_terminal/>
                     </Button>
                 </aska:FishEyePanel>
+                <!--#endregion-->
+                <!--#region 日期时间和通知方块 -->
                 <Grid DockPanel.Dock="Right" Margin="10,10,4.5,10" RenderTransformOrigin="0.5,0.5">
                     <Grid.RenderTransform>
                         <TransformGroup>
@@ -183,6 +240,7 @@
                                    HorizontalAlignment="Right" Text="2022-03-17" Foreground="White"/>
                     </Grid>
                 </Grid>
+                <!--#endregion-->
                 <Border/>
             </DockPanel>
         </Grid>

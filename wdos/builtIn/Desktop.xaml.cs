@@ -54,6 +54,21 @@ namespace wdos.builtIn
                         }));
                     }).Start();
                 }
+                #region 测试代码
+                if (global.Global.IsDebug)
+                {
+                    if (Keyboard.IsKeyDown(Key.RightCtrl) && Keyboard.IsKeyDown(Key.M))
+                    {
+                        (Resources["ModernTaskBar"] as Storyboard)?.Begin();
+                        TaskBar_Back.CornerRadius = new CornerRadius(10);
+                    }
+                    if (Keyboard.IsKeyDown(Key.RightCtrl) && Keyboard.IsKeyDown(Key.D))
+                    {
+                        (Resources["DockTaskBar"] as Storyboard)?.Begin();
+                        TaskBar_Back.CornerRadius = new CornerRadius(0);
+                    }
+                }
+                #endregion
             };
 
             Loaded += (_, _) =>
