@@ -14,7 +14,7 @@
   <a href="#" target="_blank"><img src="https://img.shields.io/badge/mac%20os-000000?style=for-the-badge&logo=macos&logoColor=F0F0F0"></img></a>
 </p>
 <p align="center">
-🌏 <a href="#-中文文档">&nbsp;中文&nbsp;</a> | <a href="#-english-docs">English</a> 🌏<br>
+🌏 <a href="#-中文文档">&nbsp;中文&nbsp;</a> | <a href="#-english-docs">English</a> 🌎<br>
 🔗 <a href="https://www.wdos.online">官网主页 - Home Page</a> | <a href="https://docs.wdos.online">官方文档 - Official Docs</a> 🗒
 </p>
 <p align="center">
