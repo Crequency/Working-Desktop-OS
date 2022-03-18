@@ -106,3 +106,4 @@ In fact, it is using the MEF framework to extend the original function, the proc
 Start up: Main program -> Start up: Loader -> Wait: Loader > Connect: with the main program -> Command: Loader > Load plugin -> Loop: Message flow | And | Handle: Message -> Wait: Main program > Shutdown system.  
 The reason why we do not use MEF directly to load plugins into the main program, is because to avoid the single plugin crash causing the entire system crash, we use the pipe to separate the main program and plugin and loader, and can separate the entire system into several sub systems and the main program system, can reduce the coupling, and improve the robustness.
 
+
