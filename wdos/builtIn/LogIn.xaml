@@ -11,82 +11,104 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
         <Storyboard x:Key="FadeIn_Login" Timeline.DesiredFrameRate="90">
-            <DoubleAnimation BeginTime="00:00:00" From="0" To="1" Duration="00:00:00.6"
-                             Storyboard.TargetName="LoginView" Storyboard.TargetProperty="Opacity">
+            <DoubleAnimation From="0" To="1"
+                             Duration="00:00:00.6" BeginTime="00:00:00"
+                             Storyboard.TargetName="LoginView"
+                             Storyboard.TargetProperty="Opacity">
                 <DoubleAnimation.EasingFunction>
                     <CubicEase EasingMode="EaseInOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <ThicknessAnimation BeginTime="0:0:0.6" From="0,-150,0,0" To="0,100,0,0" Duration="0:0:0.3"
-                                Storyboard.TargetName="CenterInfoView" Storyboard.TargetProperty="Margin">
+            <ThicknessAnimation From="0,-150,0,0" To="0,100,0,0"
+                                Duration="0:0:0.3" BeginTime="0:0:0.6"
+                                Storyboard.TargetName="CenterInfoView"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
-            <ThicknessAnimation BeginTime="0:0:0.6" From="20,0,20,-60" To="20,0,20,20" Duration="0:0:0.3"
-                                Storyboard.TargetName="OptionsPanel" Storyboard.TargetProperty="Margin">
+            <ThicknessAnimation From="20,0,20,-60" To="20,0,20,20"
+                                Duration="0:0:0.3" BeginTime="0:0:0.6"
+                                Storyboard.TargetName="OptionsPanel"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
         </Storyboard>
         <Storyboard x:Key="FadeOut_Login" Timeline.DesiredFrameRate="90">
-            <DoubleAnimation BeginTime="00:00:00" From="1" To="0" Duration="00:00:00.3"
-                             Storyboard.TargetName="LoginView" Storyboard.TargetProperty="Opacity">
+            <DoubleAnimation From="1" To="0"
+                             Duration="00:00:00.3" BeginTime="00:00:00"
+                             Storyboard.TargetName="LoginView"
+                             Storyboard.TargetProperty="Opacity">
                 <DoubleAnimation.EasingFunction>
                     <CubicEase EasingMode="EaseInOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
         </Storyboard>
         <Storyboard x:Key="EnterLogin_Login" Timeline.DesiredFrameRate="90">
-            <ThicknessAnimation BeginTime="0:0:0" From="20,0,20,20" To="20,0,20,-60" Duration="0:0:0.3"
-                                Storyboard.TargetName="OptionsPanel" Storyboard.TargetProperty="Margin">
+            <ThicknessAnimation From="20,0,20,20" To="20,0,20,-60"
+                                Duration="0:0:0.3" BeginTime="0:0:0"
+                                Storyboard.TargetName="OptionsPanel"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
-            <DoubleAnimation BeginTime="00:00:00.0" From="0" To="0.15" Duration="00:00:00.8"
-                             Storyboard.TargetName="BackImageMask" Storyboard.TargetProperty="Opacity">
+            <DoubleAnimation From="0" To="0.15"
+                             Duration="00:00:00.8" BeginTime="00:00:00.0"
+                             Storyboard.TargetName="BackImageMask"
+                             Storyboard.TargetProperty="Opacity">
                 <DoubleAnimation.EasingFunction>
                     <CubicEase EasingMode="EaseInOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <ThicknessAnimation BeginTime="00:00:00.0" From="0, 100, 0, 0" To="0, 100, 400, 0" Duration="00:00:00.3"
-                             Storyboard.TargetName="CenterInfoView" Storyboard.TargetProperty="Margin">
+            <ThicknessAnimation From="0, 100, 0, 0" To="0, 100, 400, 0"
+                                Duration="00:00:00.3" BeginTime="00:00:00.0"
+                             Storyboard.TargetName="CenterInfoView"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
-            <ThicknessAnimation BeginTime="00:00:00.3" From="0, 0, -400, 0" To="0, 0, 0, 0" Duration="00:00:00.3"
-                             Storyboard.TargetName="AccountBorder" Storyboard.TargetProperty="Margin">
+            <ThicknessAnimation From="0, 0, -400, 0" To="0, 0, 0, 0"
+                                Duration="00:00:00.3" BeginTime="00:00:00.3"
+                                Storyboard.TargetName="AccountBorder"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut" Amplitude="0.6"/>
-                    <!--<BounceEase EasingMode="EaseOut" Bounces="1" Bounciness="6"/>-->
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
         </Storyboard>
         <Storyboard x:Key="LeaveLogin_Login" Timeline.DesiredFrameRate="90">
-            <DoubleAnimation BeginTime="00:00:00.0" From="0.15" To="0" Duration="00:00:00.8"
-                             Storyboard.TargetName="BackImageMask" Storyboard.TargetProperty="Opacity">
+            <DoubleAnimation From="0.15" To="0"
+                             Duration="00:00:00.8" BeginTime="00:00:00.0"
+                             Storyboard.TargetName="BackImageMask"
+                             Storyboard.TargetProperty="Opacity">
                 <DoubleAnimation.EasingFunction>
                     <CubicEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
-            <ThicknessAnimation BeginTime="00:00:00.0" From="0, 0, 0, 0" To="0, 0, -400, 0" Duration="00:00:00.3"
-                             Storyboard.TargetName="AccountBorder" Storyboard.TargetProperty="Margin">
+            <ThicknessAnimation From="0, 0, 0, 0" To="0, 0, -400, 0"
+                                Duration="00:00:00.3" BeginTime="00:00:00.0"
+                                Storyboard.TargetName="AccountBorder"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut" Amplitude="0.6"/>
-                    <!--<BounceEase EasingMode="EaseOut" Bounces="1" Bounciness="6"/>-->
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
-            <ThicknessAnimation BeginTime="0:0:0.3" From="20,0,20,-60" To="20,0,20,20" Duration="0:0:0.3"
-                                Storyboard.TargetName="OptionsPanel" Storyboard.TargetProperty="Margin">
+            <ThicknessAnimation From="20,0,20,-60" To="20,0,20,20"
+                                Duration="0:0:0.3" BeginTime="0:0:0.3"
+                                Storyboard.TargetName="OptionsPanel"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
-            <ThicknessAnimation BeginTime="00:00:00.3" From="0, 100, 400, 0" To="0, 100, 0, 0" Duration="00:00:00.3"
-                             Storyboard.TargetName="CenterInfoView" Storyboard.TargetProperty="Margin">
+            <ThicknessAnimation From="0, 100, 400, 0" To="0, 100, 0, 0"
+                                Duration="00:00:00.3" BeginTime="00:00:00.3"
+                             Storyboard.TargetName="CenterInfoView"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
@@ -94,56 +116,77 @@
         </Storyboard>
     </UserControl.Resources>
     <Grid>
-        <Image x:Name="ForeBackImage" Source="/source/img/boom.jpg" Stretch="UniformToFill"/>
+        <Image x:Name="ForeBackImage" Source="/source/img/boom.jpg"
+               Stretch="UniformToFill"/>
         <Border x:Name="BackImageMask" Background="Black" Opacity="0"/>
-        <StackPanel x:Name="CenterInfoView" HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,-150,0,0">
-            <TextBlock x:Name="TimeBlock" Text="07:16" FontSize="96" Foreground="WhiteSmoke" FontWeight="Bold">
-                <TextBlock.Effect>
-                    <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="LightGray"/>
-                </TextBlock.Effect>
-            </TextBlock>
-            <TextBlock x:Name="DateBlock" Text="3月14日, 星期一" HorizontalAlignment="Center" FontSize="18"
+        <StackPanel x:Name="CenterInfoView" HorizontalAlignment="Center"
+                    VerticalAlignment="Top" Margin="0,-150,0,0">
+            <TextBlock x:Name="TimeBlock" Text="07:16" FontSize="96"
                        Foreground="WhiteSmoke" FontWeight="Bold">
                 <TextBlock.Effect>
-                    <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="LightGray"/>
+                    <DropShadowEffect ShadowDepth="-4" BlurRadius="15"
+                                      Color="LightGray"/>
+                </TextBlock.Effect>
+            </TextBlock>
+            <TextBlock x:Name="DateBlock" Text="3月14日, 星期一"
+                       HorizontalAlignment="Center" FontSize="18"
+                       Foreground="WhiteSmoke" FontWeight="Bold">
+                <TextBlock.Effect>
+                    <DropShadowEffect ShadowDepth="-4" BlurRadius="15"
+                                      Color="LightGray"/>
                 </TextBlock.Effect>
             </TextBlock>
         </StackPanel>
-        <StackPanel x:Name="OptionsPanel" Orientation="Horizontal" HorizontalAlignment="Right"
+        <StackPanel x:Name="OptionsPanel" Orientation="Horizontal"
+                    HorizontalAlignment="Right"
                     VerticalAlignment="Bottom" Margin="20,0,20,-60">
-            <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
+            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                    Width="60" Height="60"
                     Margin="5" Click="More_Btn_Click">
-                <Path Data="{StaticResource More}" Stroke="White" Fill="White"/>
+                <Path Data="{StaticResource Options}" Stroke="White"
+                      Fill="White"/>
             </Button>
-            <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
+            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                    Width="60" Height="60"
                     Margin="5" Click="Message_Btn_Click">
-                <Path Data="{StaticResource Message}" Stroke="White" Fill="White"/>
+                <Path Data="{StaticResource Message}" Stroke="White"
+                      Fill="White"/>
             </Button>
-            <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
+            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                    Width="60" Height="60"
                     Margin="5" Click="Restore_Btn_Click">
-                <Path Data="{StaticResource Restore}" Stroke="White" Fill="White"/>
+                <Path Data="{StaticResource Restore}" Stroke="White"
+                      Fill="White"/>
             </Button>
-            <Button Style="{StaticResource MaterialDesignFlatButton}" Width="60" Height="60"
+            <Button Style="{StaticResource MaterialDesignFlatButton}"
+                    Width="60" Height="60"
                     Margin="5" Click="ShutDown_Btn_Click">
-                <Path Data="{StaticResource Power}" Stroke="White" Fill="White"/>
+                <Path Data="{StaticResource Power}" Stroke="White"
+                      Fill="White"/>
             </Button>
         </StackPanel>
-        <Grid x:Name="AccountBorder" HorizontalAlignment="Right" Width="400" Margin="0,0,-400,0">
-            <Border Background="Black" Opacity="0.5" Margin="20" CornerRadius="35">
+        <Grid x:Name="AccountBorder" HorizontalAlignment="Right"
+              Width="400" Margin="0,0,-400,0">
+            <Border Background="Black" Opacity="0.5" Margin="20"
+                    CornerRadius="35">
                 <Border.Effect>
-                    <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="Black"/>
+                    <DropShadowEffect ShadowDepth="-4" BlurRadius="15"
+                                      Color="Black"/>
                 </Border.Effect>
             </Border>
             <StackPanel VerticalAlignment="Top" Margin="40,100,40,0">
                 <!--<Image Source="/source/logo-mid.png" Width="96" Height="96"/>-->
                 <icon:wdos_icon Width="96" Height="96"/>
-                <TextBlock Text="WDOS" HorizontalAlignment="Center" Margin="0,30,0,0"
+                <TextBlock Text="WDOS" HorizontalAlignment="Center"
+                           Margin="0,30,0,0"
                            FontSize="28" Foreground="WhiteSmoke"/>
-                <PasswordBox x:Name="PasswdBox" Margin="0,30,0,0" Width="250" PasswordChar="●"/>
-                <Button Style="{StaticResource MaterialDesignRaisedButton}" Foreground="WhiteSmoke"
-                        Background="Black" BorderBrush="Transparent" Width="80" Height="40"
-                        Margin="0,30,0,0" HorizontalAlignment="Center" Content="登 录"
-                        Click="LogIn_Click"/>
+                <PasswordBox x:Name="PasswdBox" Margin="0,30,0,0"
+                             Width="250" PasswordChar="●"/>
+                <Button Style="{StaticResource MaterialDesignRaisedButton}"
+                        Foreground="WhiteSmoke" Background="Black"
+                        BorderBrush="Transparent" Width="80" Height="40"
+                        Margin="0,30,0,0" HorizontalAlignment="Center"
+                        Content="登 录" Click="LogIn_Click"/>
             </StackPanel>
         </Grid>
     </Grid>
