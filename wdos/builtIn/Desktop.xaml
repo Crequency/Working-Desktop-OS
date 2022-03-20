@@ -9,77 +9,101 @@
              xmlns:aska="clr-namespace:Aska.WPF.Controls;assembly=Aska.WPF"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
+        
         <!--#region 切换到 -> 现代样式任务栏 -> ModernTaskBar -->
         <Storyboard x:Key="ModernTaskBar">
             <ThicknessAnimation From="0" To="10" Duration="0:0:0.3" BeginTime="0:0:0"
-                                Storyboard.TargetName="TaskBar_Back" Storyboard.TargetProperty="Margin">
+                                Storyboard.TargetName="TaskBar_Back"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <CubicEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
             <ThicknessAnimation From="0" To="10,0" Duration="0:0:0.3" BeginTime="0:0:0"
-                                Storyboard.TargetName="TaskBar_Container" Storyboard.TargetProperty="Margin">
+                                Storyboard.TargetName="TaskBar_Container"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
-            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                     Storyboard.TargetName="TaskBar_Container" From="10" To="0" Duration="0:0:0.3">
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).
+                             (TransformGroup.Children)[0].(TranslateTransform.Y)"
+                             Storyboard.TargetName="TaskBar_Container"
+                             From="10" To="0" Duration="0:0:0.3">
                 <DoubleAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
         </Storyboard>
         <!--#endregion-->
+        
         <!--#region 切换到 -> 贴靠样式任务栏 -> DockTaskBar -->
         <Storyboard x:Key="DockTaskBar">
             <ThicknessAnimation From="10" To="0" Duration="0:0:0.4" BeginTime="0:0:0"
-                                Storyboard.TargetName="TaskBar_Back" Storyboard.TargetProperty="Margin">
+                                Storyboard.TargetName="TaskBar_Back"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
             <ThicknessAnimation From="10,0" To="0" Duration="0:0:0.3" BeginTime="0:0:0"
-                                Storyboard.TargetName="TaskBar_Container" Storyboard.TargetProperty="Margin">
+                                Storyboard.TargetName="TaskBar_Container"
+                                Storyboard.TargetProperty="Margin">
                 <ThicknessAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </ThicknessAnimation.EasingFunction>
             </ThicknessAnimation>
-            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(TranslateTransform.Y)"
-                                     Storyboard.TargetName="TaskBar_Container" From="0" To="10" Duration="0:0:0.3">
+            <DoubleAnimation Storyboard.TargetProperty="(UIElement.RenderTransform).
+                             (TransformGroup.Children)[0].(TranslateTransform.Y)"
+                             Storyboard.TargetName="TaskBar_Container"
+                             From="0" To="10" Duration="0:0:0.3">
                 <DoubleAnimation.EasingFunction>
                     <BackEase EasingMode="EaseOut"/>
                 </DoubleAnimation.EasingFunction>
             </DoubleAnimation>
         </Storyboard>
         <!--#endregion-->
+        
     </UserControl.Resources>
     <Grid>
         <Image x:Name="Desktop_Back" Source="/source/img/win10.jpg" Stretch="UniformToFill"/>
 
         <Canvas x:Name="Desktop_Container"/>
 
-        <Grid x:Name="TaskBar" VerticalAlignment="Bottom" Height="80">
-            <!--#region 任务栏背景 -->
-            <Border x:Name="TaskBar_Back" Height="60" Margin="10" Background="Black" CornerRadius="10"
-                    Opacity="0.5" RenderTransformOrigin="0.5,0.5" VerticalAlignment="Bottom">
+        <Grid x:Name="StartMenu" VerticalAlignment="Bottom" HorizontalAlignment="Left"
+              Margin="0,0,0,70" Width="700" Height="490">
+            
+            <!--#region 开始菜单背景 -->
+            <Border Background="Black" Margin="10" CornerRadius="10" Opacity="0.5"
+                    RenderTransformOrigin="0.5,0.5">
                 <Border.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform ScaleX="1" ScaleY="1"/>
                     </TransformGroup>
                 </Border.RenderTransform>
+                <Border.Effect>
+                    <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="Black"/>
+                </Border.Effect>
                 <Border.Triggers>
                     <EventTrigger RoutedEvent="UIElement.MouseDown">
                         <BeginStoryboard>
                             <Storyboard Timeline.DesiredFrameRate="90">
-                                <DoubleAnimation From="1" To="1.003" Duration="0:0:0.15" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                <DoubleAnimation From="1" To="1.003" Duration="0:0:0.15"
+                                                 BeginTime="0:0:0"
+                                                 Storyboard.TargetProperty="
+                                                 (UIElement.RenderTransform).
+                                                 (TransformGroup.Children)[0].
+                                                 (ScaleTransform.ScaleX)">
                                     <DoubleAnimation.EasingFunction>
                                         <BackEase EasingMode="EaseOut"/>
                                     </DoubleAnimation.EasingFunction>
                                 </DoubleAnimation>
-                                <DoubleAnimation From="1" To="1.04" Duration="0:0:0.15" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <DoubleAnimation From="1" To="1.015" Duration="0:0:0.15"
+                                                 BeginTime="0:0:0"
+                                                 Storyboard.TargetProperty="
+                                                 (UIElement.RenderTransform).
+                                                 (TransformGroup.Children)[0].
+                                                 (ScaleTransform.ScaleY)">
                                     <DoubleAnimation.EasingFunction>
                                         <BackEase EasingMode="EaseOut"/>
                                     </DoubleAnimation.EasingFunction>
@@ -90,14 +114,351 @@
                     <EventTrigger RoutedEvent="UIElement.MouseUp">
                         <BeginStoryboard>
                             <Storyboard Timeline.DesiredFrameRate="90">
-                                <DoubleAnimation From="1.003" To="1" Duration="0:0:0.15" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                <DoubleAnimation From="1.003" To="1" Duration="0:0:0.15"
+                                                 BeginTime="0:0:0"
+                                                 Storyboard.TargetProperty="
+                                                 (UIElement.RenderTransform).
+                                                 (TransformGroup.Children)[0].
+                                                 (ScaleTransform.ScaleX)">
                                     <DoubleAnimation.EasingFunction>
                                         <BackEase EasingMode="EaseOut"/>
                                     </DoubleAnimation.EasingFunction>
                                 </DoubleAnimation>
-                                <DoubleAnimation From="1.04" To="1" Duration="0:0:0.15" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                <DoubleAnimation From="1.015" To="1" Duration="0:0:0.15"
+                                                 BeginTime="0:0:0"
+                                                 Storyboard.TargetProperty="
+                                                 (UIElement.RenderTransform).
+                                                 (TransformGroup.Children)[0].
+                                                 (ScaleTransform.ScaleY)">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BackEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                </Border.Triggers>
+            </Border>
+            <!--#endregion-->
+            
+            <!--#region 开始菜单容器 -->
+            <DockPanel x:Name="StartMenu_Container" Margin="10">
+                
+                <!--#region 开始菜单顶栏容器 -->
+                <Grid DockPanel.Dock="Top" Height="100">
+
+                    <!--#region 开始菜单顶栏背景 -->
+                    <Border Margin="15" CornerRadius="10" Opacity="0.3"
+                            RenderTransformOrigin="0.5,0.5">
+                        <Border.RenderTransform>
+                            <TransformGroup>
+                                <ScaleTransform ScaleX="1" ScaleY="1"/>
+                            </TransformGroup>
+                        </Border.RenderTransform>
+                        <Border.Background>
+                            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                                <GradientStop Color="#FF2AFADF" Offset="0"/>
+                                <GradientStop Color="#FF4C83FF" Offset="1"/>
+                            </LinearGradientBrush>
+                        </Border.Background>
+                        <Border.Effect>
+                            <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="Black"/>
+                        </Border.Effect>
+                        <Border.Triggers>
+                            <EventTrigger RoutedEvent="UIElement.MouseDown">
+                                <BeginStoryboard>
+                                    <Storyboard Timeline.DesiredFrameRate="90">
+                                        <DoubleAnimation From="1" To="1.02"
+                                                         Duration="0:0:0.15"
+                                                         BeginTime="0:0:0"
+                                                         Storyboard.TargetProperty="
+                                                         (UIElement.RenderTransform).
+                                                         (TransformGroup.Children)[0].
+                                                         (ScaleTransform.ScaleX)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation From="1" To="1.15"
+                                                         Duration="0:0:0.15"
+                                                         BeginTime="0:0:0"
+                                                         Storyboard.TargetProperty="
+                                                         (UIElement.RenderTransform).
+                                                         (TransformGroup.Children)[0].
+                                                         (ScaleTransform.ScaleY)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                            <EventTrigger RoutedEvent="UIElement.MouseUp">
+                                <BeginStoryboard>
+                                    <Storyboard Timeline.DesiredFrameRate="90">
+                                        <DoubleAnimation From="1.02" To="1"
+                                                         Duration="0:0:0.15"
+                                                         BeginTime="0:0:0"
+                                                         Storyboard.TargetProperty="
+                                                         (UIElement.RenderTransform).
+                                                         (TransformGroup.Children)[0].
+                                                         (ScaleTransform.ScaleX)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                        <DoubleAnimation From="1.15" To="1"
+                                                         Duration="0:0:0.15"
+                                                         BeginTime="0:0:0"
+                                                         Storyboard.TargetProperty="
+                                                         (UIElement.RenderTransform).
+                                                         (TransformGroup.Children)[0].
+                                                         (ScaleTransform.ScaleY)">
+                                            <DoubleAnimation.EasingFunction>
+                                                <BackEase EasingMode="EaseOut"/>
+                                            </DoubleAnimation.EasingFunction>
+                                        </DoubleAnimation>
+                                    </Storyboard>
+                                </BeginStoryboard>
+                            </EventTrigger>
+                        </Border.Triggers>
+                    </Border>
+                    <!--#endregion-->
+
+                    <!--#region 开始菜单顶栏 -->
+                    <DockPanel Margin="15">
+                        <Grid DockPanel.Dock="Left" Width="150" Margin="5,0,0,0"
+                              RenderTransformOrigin="0.5,0.5">
+                            <Grid.RenderTransform>
+                                <TransformGroup>
+                                    <ScaleTransform ScaleX="1" ScaleY="1"/>
+                                </TransformGroup>
+                            </Grid.RenderTransform>
+                            <Grid.Triggers>
+                                <EventTrigger RoutedEvent="UIElement.MouseEnter">
+                                    <BeginStoryboard>
+                                        <Storyboard Timeline.DesiredFrameRate="90">
+                                            <DoubleAnimation From="1" To="0.95"
+                                                             Duration="0:0:0.1"
+                                                             BeginTime="0:0:0"
+                                                             Storyboard.TargetProperty="
+                                                             (UIElement.RenderTransform).
+                                                             (TransformGroup.Children)[0].
+                                                             (ScaleTransform.ScaleX)">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BackEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation From="1" To="0.95"
+                                                             Duration="0:0:0.1"
+                                                             BeginTime="0:0:0"
+                                                             Storyboard.TargetProperty="
+                                                             (UIElement.RenderTransform).
+                                                             (TransformGroup.Children)[0].
+                                                             (ScaleTransform.ScaleY)">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BackEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.MouseLeave">
+                                    <BeginStoryboard>
+                                        <Storyboard Timeline.DesiredFrameRate="90">
+                                            <DoubleAnimation From="0.95" To="1"
+                                                             Duration="0:0:0.1"
+                                                             BeginTime="0:0:0"
+                                                             Storyboard.TargetProperty="
+                                                             (UIElement.RenderTransform).
+                                                             (TransformGroup.Children)[0].
+                                                             (ScaleTransform.ScaleX)">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BackEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation From="0.95" To="1"
+                                                             Duration="0:0:0.1"
+                                                             BeginTime="0:0:0"
+                                                             Storyboard.TargetProperty="
+                                                             (UIElement.RenderTransform).
+                                                             (TransformGroup.Children)[0].
+                                                             (ScaleTransform.ScaleY)">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BackEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.MouseDown">
+                                    <BeginStoryboard>
+                                        <Storyboard Timeline.DesiredFrameRate="90">
+                                            <DoubleAnimation From="1" To="1.15"
+                                                             Duration="0:0:0.15"
+                                                             BeginTime="0:0:0"
+                                                             Storyboard.TargetProperty="
+                                                             (UIElement.RenderTransform).
+                                                             (TransformGroup.Children)[0].
+                                                             (ScaleTransform.ScaleX)">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BackEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation From="1" To="1.16"
+                                                             Duration="0:0:0.15"
+                                                             BeginTime="0:0:0"
+                                                             Storyboard.TargetProperty="
+                                                             (UIElement.RenderTransform).
+                                                             (TransformGroup.Children)[0].
+                                                             (ScaleTransform.ScaleY)">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BackEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                                <EventTrigger RoutedEvent="UIElement.MouseUp">
+                                    <BeginStoryboard>
+                                        <Storyboard Timeline.DesiredFrameRate="90">
+                                            <DoubleAnimation From="1.15" To="1"
+                                                             Duration="0:0:0.15"
+                                                             BeginTime="0:0:0"
+                                                             Storyboard.TargetProperty="
+                                                             (UIElement.RenderTransform).
+                                                             (TransformGroup.Children)[0].
+                                                             (ScaleTransform.ScaleX)">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BackEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                            <DoubleAnimation From="1.16" To="1"
+                                                             Duration="0:0:0.15"
+                                                             BeginTime="0:0:0"
+                                                             Storyboard.TargetProperty="
+                                                             (UIElement.RenderTransform).
+                                                             (TransformGroup.Children)[0].
+                                                             (ScaleTransform.ScaleY)">
+                                                <DoubleAnimation.EasingFunction>
+                                                    <BackEase EasingMode="EaseOut"/>
+                                                </DoubleAnimation.EasingFunction>
+                                            </DoubleAnimation>
+                                        </Storyboard>
+                                    </BeginStoryboard>
+                                </EventTrigger>
+                            </Grid.Triggers>
+                            <!--#region 开始菜单顶栏头像框 -->
+                            <Border Background="Black" Opacity="0.5" Margin="5"
+                                    CornerRadius="7">
+                                <Border.Effect>
+                                    <DropShadowEffect ShadowDepth="-4" BlurRadius="15"
+                                                      Color="Black"/>
+                                </Border.Effect>
+                            </Border>
+                            <!--#endregion-->
+                            <icon:wdos_icon Width="40" Height="40" Margin="20,0,0,0"
+                                            HorizontalAlignment="Left"/>
+                            <TextBlock Margin="70,15,15,15" Foreground="White"
+                                       Text="WDOS" VerticalAlignment="Center"
+                                       FontSize="18"/>
+                        </Grid>
+                        <Grid DockPanel.Dock="Right">
+                            <StackPanel Orientation="Horizontal" Margin="10">
+                                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                        Width="55" Height="50" Margin="2.5,0">
+                                    <Path Data="{StaticResource Search}" Fill="White"/>
+                                </Button>
+                                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                        Width="55" Height="50" Margin="2.5,0">
+                                    <Path Data="{StaticResource Settings}" Fill="White"/>
+                                </Button>
+                                <Button Style="{StaticResource MaterialDesignFlatButton}"
+                                        Width="55" Height="50" Margin="2.5,0">
+                                    <Path Data="{StaticResource Power}" Fill="White"/>
+                                </Button>
+                            </StackPanel>
+                        </Grid>
+                        <Border/>
+                    </DockPanel>
+                    <!--#endregion-->
+
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region 磁贴容器 -->
+                <Grid DockPanel.Dock="Bottom">
+
+                </Grid>
+                <!--#endregion-->
+
+                <!--#region 自定义贴片容器 -->
+                <Grid>
+
+                </Grid>
+                <!--#endregion-->
+
+            </DockPanel>
+            <!--#endregion-->
+        </Grid>
+
+        <Grid x:Name="TaskBar" VerticalAlignment="Bottom" Height="80">
+
+            <!--#region 任务栏背景 -->
+            <Border x:Name="TaskBar_Back" Height="60" Margin="10" Background="Black"
+                    CornerRadius="10" Opacity="0.5" RenderTransformOrigin="0.5,0.5"
+                    VerticalAlignment="Bottom">
+                <Border.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleX="1" ScaleY="1"/>
+                    </TransformGroup>
+                </Border.RenderTransform>
+                <Border.Triggers>
+                    <EventTrigger RoutedEvent="UIElement.MouseDown">
+                        <BeginStoryboard>
+                            <Storyboard Timeline.DesiredFrameRate="90">
+                                <DoubleAnimation From="1" To="1.003"
+                                                 Duration="0:0:0.15" BeginTime="0:0:0"
+                                                 Storyboard.TargetProperty="
+                                                 (UIElement.RenderTransform).
+                                                 (TransformGroup.Children)[0].
+                                                 (ScaleTransform.ScaleX)">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BackEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation From="1" To="1.04"
+                                                 Duration="0:0:0.15" BeginTime="0:0:0"
+                                                 Storyboard.TargetProperty="
+                                                 (UIElement.RenderTransform).
+                                                 (TransformGroup.Children)[0].
+                                                 (ScaleTransform.ScaleY)">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BackEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                            </Storyboard>
+                        </BeginStoryboard>
+                    </EventTrigger>
+                    <EventTrigger RoutedEvent="UIElement.MouseUp">
+                        <BeginStoryboard>
+                            <Storyboard Timeline.DesiredFrameRate="90">
+                                <DoubleAnimation From="1.003" To="1"
+                                                 Duration="0:0:0.15" BeginTime="0:0:0"
+                                                 Storyboard.TargetProperty="
+                                                 (UIElement.RenderTransform).
+                                                 (TransformGroup.Children)[0].
+                                                 (ScaleTransform.ScaleX)">
+                                    <DoubleAnimation.EasingFunction>
+                                        <BackEase EasingMode="EaseOut"/>
+                                    </DoubleAnimation.EasingFunction>
+                                </DoubleAnimation>
+                                <DoubleAnimation From="1.04" To="1"
+                                                 Duration="0:0:0.15" BeginTime="0:0:0"
+                                                 Storyboard.TargetProperty="
+                                                 (UIElement.RenderTransform).
+                                                 (TransformGroup.Children)[0].
+                                                 (ScaleTransform.ScaleY)">
                                     <DoubleAnimation.EasingFunction>
                                         <BackEase EasingMode="EaseOut"/>
                                     </DoubleAnimation.EasingFunction>
@@ -111,12 +472,16 @@
                 </Border.Effect>
             </Border>
             <!--#endregion-->
-            <DockPanel x:Name="TaskBar_Container" VerticalAlignment="Center" Margin="10,0" RenderTransformOrigin="0.5,0.5">
+
+            <!--#region 任务栏容器 -->
+            <DockPanel x:Name="TaskBar_Container" VerticalAlignment="Center" Margin="10,0"
+                       RenderTransformOrigin="0.5,0.5">
                 <DockPanel.RenderTransform>
                     <TransformGroup>
                         <TranslateTransform X="0" Y="0"/>
                     </TransformGroup>
                 </DockPanel.RenderTransform>
+
                 <!--#region 任务栏锁定图标 -->
                 <aska:FishEyePanel Height="50" Width="200" Margin="10" DockPanel.Dock="Left">
                     <Button x:Name="StartMenuBtn" Style="{StaticResource PulseButton}"
@@ -137,8 +502,9 @@
                     </Button>
                 </aska:FishEyePanel>
                 <!--#endregion-->
+
                 <!--#region 日期时间和通知方块 -->
-                <Grid DockPanel.Dock="Right" Margin="10,10,4.5,10" RenderTransformOrigin="0.5,0.5">
+                <Grid DockPanel.Dock="Right" Margin="10,10,6,10" RenderTransformOrigin="0.5,0.5">
                     <Grid.RenderTransform>
                         <TransformGroup>
                             <ScaleTransform ScaleX="1" ScaleY="1" />
@@ -148,14 +514,22 @@
                         <EventTrigger RoutedEvent="UIElement.MouseEnter">
                             <BeginStoryboard>
                                 <Storyboard Timeline.DesiredFrameRate="90">
-                                    <DoubleAnimation From="1" To="0.95" Duration="0:0:0.1" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                    <DoubleAnimation From="1" To="0.95"
+                                                     Duration="0:0:0.1" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="
+                                                     (UIElement.RenderTransform).
+                                                     (TransformGroup.Children)[0].
+                                                     (ScaleTransform.ScaleX)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
-                                    <DoubleAnimation From="1" To="0.95" Duration="0:0:0.1" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                    <DoubleAnimation From="1" To="0.95"
+                                                     Duration="0:0:0.1" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="
+                                                     (UIElement.RenderTransform).
+                                                     (TransformGroup.Children)[0].
+                                                     (ScaleTransform.ScaleY)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
@@ -166,14 +540,22 @@
                         <EventTrigger RoutedEvent="UIElement.MouseLeave">
                             <BeginStoryboard>
                                 <Storyboard Timeline.DesiredFrameRate="90">
-                                    <DoubleAnimation From="0.95" To="1" Duration="0:0:0.1" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                    <DoubleAnimation From="0.95" To="1"
+                                                     Duration="0:0:0.1" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="
+                                                     (UIElement.RenderTransform).
+                                                     (TransformGroup.Children)[0].
+                                                     (ScaleTransform.ScaleX)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
-                                    <DoubleAnimation From="0.95" To="1" Duration="0:0:0.1" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                    <DoubleAnimation From="0.95" To="1"
+                                                     Duration="0:0:0.1" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="
+                                                     (UIElement.RenderTransform).
+                                                     (TransformGroup.Children)[0].
+                                                     (ScaleTransform.ScaleY)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
@@ -184,14 +566,22 @@
                         <EventTrigger RoutedEvent="UIElement.MouseDown">
                             <BeginStoryboard>
                                 <Storyboard Timeline.DesiredFrameRate="90">
-                                    <DoubleAnimation From="0.95" To="1.15" Duration="0:0:0.1" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                    <DoubleAnimation From="0.95" To="1.15"
+                                                     Duration="0:0:0.1" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="
+                                                     (UIElement.RenderTransform).
+                                                     (TransformGroup.Children)[0].
+                                                     (ScaleTransform.ScaleX)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
-                                    <DoubleAnimation From="0.95" To="1.15" Duration="0:0:0.1" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                    <DoubleAnimation From="0.95" To="1.15"
+                                                     Duration="0:0:0.1" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="
+                                                     (UIElement.RenderTransform).
+                                                     (TransformGroup.Children)[0].
+                                                     (ScaleTransform.ScaleY)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
@@ -202,14 +592,22 @@
                         <EventTrigger RoutedEvent="UIElement.MouseUp">
                             <BeginStoryboard>
                                 <Storyboard Timeline.DesiredFrameRate="90">
-                                    <DoubleAnimation From="1.15" To="0.95" Duration="0:0:0.1" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)">
+                                    <DoubleAnimation From="1.15" To="0.95"
+                                                     Duration="0:0:0.1" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="
+                                                     (UIElement.RenderTransform).
+                                                     (TransformGroup.Children)[0].
+                                                     (ScaleTransform.ScaleX)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
                                     </DoubleAnimation>
-                                    <DoubleAnimation From="1.15" To="0.95" Duration="0:0:0.1" BeginTime="0:0:0"
-                                                     Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)">
+                                    <DoubleAnimation From="1.15" To="0.95"
+                                                     Duration="0:0:0.1" BeginTime="0:0:0"
+                                                     Storyboard.TargetProperty="
+                                                     (UIElement.RenderTransform).
+                                                     (TransformGroup.Children)[0].
+                                                     (ScaleTransform.ScaleY)">
                                         <DoubleAnimation.EasingFunction>
                                             <BackEase EasingMode="EaseOut"/>
                                         </DoubleAnimation.EasingFunction>
@@ -218,6 +616,8 @@
                             </BeginStoryboard>
                         </EventTrigger>
                     </Grid.Triggers>
+                    
+                    <!--#region 方块背景 -->
                     <Border Grid.RowSpan="2" Opacity="0.1" CornerRadius="7">
                         <Border.Background>
                             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
@@ -229,20 +629,30 @@
                             <DropShadowEffect ShadowDepth="-4" BlurRadius="15" Color="Black"/>
                         </Border.Effect>
                     </Border>
+                    <!--#endregion-->
+
+                    <!--#region 日期和时间 -->
                     <Grid Margin="15,0,7.5,0">
                         <Grid.RowDefinitions>
                             <RowDefinition/>
                             <RowDefinition/>
                         </Grid.RowDefinitions>
-                        <TextBlock x:Name="TimeBlock" VerticalAlignment="Center" Grid.Row="0" FontSize="12"
-                                   HorizontalAlignment="Right" Text="07:16:30" Foreground="White"/>
-                        <TextBlock x:Name="DateBlock" VerticalAlignment="Center" Grid.Row="1" FontSize="12"
-                                   HorizontalAlignment="Right" Text="2022-03-17" Foreground="White"/>
+                        <TextBlock x:Name="TimeBlock" VerticalAlignment="Center"
+                                   Grid.Row="0" FontSize="12" HorizontalAlignment="Right"
+                                   Text="07:16:30" Foreground="White"/>
+                        <TextBlock x:Name="DateBlock" VerticalAlignment="Center"
+                                   Grid.Row="1" FontSize="12" HorizontalAlignment="Right"
+                                   Text="2022-03-17" Foreground="White"/>
                     </Grid>
+                    <!--#endregion-->
+
                 </Grid>
                 <!--#endregion-->
+
                 <Border/>
             </DockPanel>
+            <!--#endregion-->
+
         </Grid>
     </Grid>
 </UserControl>
