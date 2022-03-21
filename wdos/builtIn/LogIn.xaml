@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wdos.builtIn"
              xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-             xmlns:icon="clr-namespace:wdos.builtIn.controls"
+             xmlns:icon="clr-namespace:Interaga.Icons;assembly=Interaga"
              mc:Ignorable="d" Opacity="0"
              x:Name="LoginView"
              d:DesignHeight="450" d:DesignWidth="800">
@@ -176,7 +176,7 @@
             </Border>
             <StackPanel VerticalAlignment="Top" Margin="40,100,40,0">
                 <!--<Image Source="/source/logo-mid.png" Width="96" Height="96"/>-->
-                <icon:wdos_icon Width="96" Height="96"/>
+                <icon:WDOS Width="96" Height="96"/>
                 <TextBlock Text="WDOS" HorizontalAlignment="Center"
                            Margin="0,30,0,0"
                            FontSize="28" Foreground="WhiteSmoke"/>

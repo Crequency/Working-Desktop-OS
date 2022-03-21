@@ -68,6 +68,7 @@
 
   <ItemGroup>
     <PackageReference Include="HandyControl" Version="3.3.0" />
+    <PackageReference Include="Interaga" Version="1.0.0" />
     <PackageReference Include="MaterialDesignColors" Version="2.0.4" />
     <PackageReference Include="MaterialDesignThemes" Version="4.3.0" />
     <PackageReference Include="WPF-UI" Version="1.2.1" />
@@ -88,6 +89,10 @@
     <None Update="ScreenSelecter.xaml">
       <Generator>MSBuild:Compile</Generator>
     </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="builtIn\controls\" />
   </ItemGroup>
 
 </Project>

@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:wdos.builtIn"
-             xmlns:icon="clr-namespace:wdos.builtIn.controls"
              mc:Ignorable="d"
+             xmlns:icons="clr-namespace:Interaga.Icons;assembly=Interaga"
              xmlns:aska="clr-namespace:Aska.WPF.Controls;assembly=Aska.WPF"
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -363,7 +363,7 @@
                                 </Border.Effect>
                             </Border>
                             <!--#endregion-->
-                            <icon:wdos_icon Width="40" Height="40" Margin="20,0,0,0"
+                            <icons:WDOS Width="40" Height="40" Margin="20,0,0,0"
                                             HorizontalAlignment="Left"/>
                             <TextBlock Margin="70,15,15,15" Foreground="White"
                                        Text="WDOS" VerticalAlignment="Center"
@@ -492,19 +492,19 @@
                 <aska:FishEyePanel Height="50" Width="200" Margin="10" DockPanel.Dock="Left">
                     <Button x:Name="StartMenuBtn" Style="{StaticResource PulseButton}"
                             Width="40" Height="40" Margin="5,0">
-                        <icon:wdos_icon/>
+                        <icons:WDOS/>
                     </Button>
                     <Button Style="{StaticResource PulseButton}"
                             Width="40" Height="40" Margin="5,0">
-                        <icon:wdos_icon_search/>
+                        <icons:Search/>
                     </Button>
                     <Button Style="{StaticResource PulseButton}"
                             Width="40" Height="40" Margin="5,0">
-                        <icon:wdos_icon_vdesk/>
+                        <icons:Desks/>
                     </Button>
                     <Button Style="{StaticResource PulseButton}"
                             Width="40" Height="40" Margin="5,0">
-                        <icon:wdos_icon_terminal/>
+                        <icons:Terminal/>
                     </Button>
                 </aska:FishEyePanel>
                 <!--#endregion-->
