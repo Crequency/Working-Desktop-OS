@@ -11,7 +11,7 @@
     <UserControl.Resources>
         
         <!--#region 切换到 -> 现代样式任务栏 -> ModernTaskBar -->
-        <Storyboard x:Key="ModernTaskBar">
+        <Storyboard x:Key="ModernTaskBar" Timeline.DesiredFrameRate="90">
             <ThicknessAnimation From="0" To="10" Duration="0:0:0.3" BeginTime="0:0:0"
                                 Storyboard.TargetName="TaskBar_Back"
                                 Storyboard.TargetProperty="Margin">
@@ -38,7 +38,7 @@
         <!--#endregion-->
         
         <!--#region 切换到 -> 贴靠样式任务栏 -> DockTaskBar -->
-        <Storyboard x:Key="DockTaskBar">
+        <Storyboard x:Key="DockTaskBar" Timeline.DesiredFrameRate="90">
             <ThicknessAnimation From="10" To="0" Duration="0:0:0.4" BeginTime="0:0:0"
                                 Storyboard.TargetName="TaskBar_Back"
                                 Storyboard.TargetProperty="Margin">
@@ -63,7 +63,13 @@
             </DoubleAnimation>
         </Storyboard>
         <!--#endregion-->
-        
+
+        <!--#region 展开开始菜单 -->
+        <Storyboard x:Key="StartMenu_Expand">
+            
+        </Storyboard>
+        <!--#endregion-->
+
     </UserControl.Resources>
     <Grid>
         <Image x:Name="Desktop_Back" Source="/source/img/win10.jpg" Stretch="UniformToFill"/>
