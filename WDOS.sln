@@ -23,11 +23,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.contract.unit.test", "
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.basic.lib", "wdos.basic.lib\wdos.basic.lib.csproj", "{85066F7B-A771-40B1-B885-5798F3F80AE6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "wdos.unit.test", "test\wdos.unit.test\wdos.unit.test.csproj", "{E1054E29-5880-4461-8F5F-AA565B5C2B6A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "wdos.unit.test", "test\wdos.unit.test\wdos.unit.test.csproj", "{E1054E29-5880-4461-8F5F-AA565B5C2B6A}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ref", "ref", "{3AA3BEA1-A661-4C0B-B99D-9ADC8C26F683}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Aska.WPF", "..\Aska.WPF\Aska.WPF.csproj", "{B1CAB563-B227-43CE-8652-41C6334F6711}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WDScript", "..\WDScript\WDScript\WDScript.csproj", "{BCF1DDE4-948B-42E1-843E-54B3588921CF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -75,6 +77,10 @@ Global
 		{B1CAB563-B227-43CE-8652-41C6334F6711}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B1CAB563-B227-43CE-8652-41C6334F6711}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B1CAB563-B227-43CE-8652-41C6334F6711}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BCF1DDE4-948B-42E1-843E-54B3588921CF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BCF1DDE4-948B-42E1-843E-54B3588921CF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BCF1DDE4-948B-42E1-843E-54B3588921CF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BCF1DDE4-948B-42E1-843E-54B3588921CF}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -84,6 +90,7 @@ Global
 		{DCA99F44-3112-4542-97E7-858B89A9C77A} = {1E4D4B6C-2063-4A70-8B64-DA9BC24EB91E}
 		{E1054E29-5880-4461-8F5F-AA565B5C2B6A} = {1E4D4B6C-2063-4A70-8B64-DA9BC24EB91E}
 		{B1CAB563-B227-43CE-8652-41C6334F6711} = {3AA3BEA1-A661-4C0B-B99D-9ADC8C26F683}
+		{BCF1DDE4-948B-42E1-843E-54B3588921CF} = {3AA3BEA1-A661-4C0B-B99D-9ADC8C26F683}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {DA32DDEB-3928-4E24-AE5E-85D921E7B4BB}
