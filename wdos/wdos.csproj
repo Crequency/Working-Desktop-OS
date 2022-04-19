@@ -75,7 +75,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\Aska.WPF\Aska.WPF.csproj" />
     <ProjectReference Include="..\wdos.global\wdos.global.csproj" />
   </ItemGroup>
 
